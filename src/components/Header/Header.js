@@ -69,9 +69,9 @@ export const Header = () => {
                 <a target="_blank" href=' https://twitter.com/DevTrotter_Pro' className='wrapper-social twitter'>
                     <FaTwitter />
                 </a>
-                <a className='wrapper-search' onClick={() => setShowInput(!showInput)}>
+                <div className='wrapper-search' onClick={() => setShowInput(!showInput)}>
                     <IoIosSearch />
-                </a>
+                </div>
                 {
                     showInput &&
                     <input type='text' placeholder='Rechercher un article' />
