@@ -15,6 +15,8 @@ miniature: assets/miniature.png
 
 Une petite image : 
 
-![gatsby](assets/gatsby-icon.png)
+
+
+
 
 *Fini*
