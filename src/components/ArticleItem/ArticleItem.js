@@ -14,7 +14,7 @@ export const ArticleItem = ({ node, title, author }) => {
                 alt={title}
             />
         : 
-            <img alt={title} src={node.frontmatter.miniature.publicURL} />
+            null
 
         }
             <div className='container-article-right'>
