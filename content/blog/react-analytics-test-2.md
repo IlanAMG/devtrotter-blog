@@ -3,7 +3,7 @@ slug: react-analytics-2
 date: 2020-05-02T07:37:59.071Z
 title: React Analytics - Test - 2
 categorie: JEUX VIDEOS
-miniature: assets/miniature.png
+miniature: /assets/miniature.png
 ---
 # CECI EST UN TEST 2
 
