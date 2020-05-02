@@ -3,7 +3,7 @@ slug: react-analytics
 date: 2020-05-02T07:37:59.071Z
 title: React Analytics - Test
 categorie: DESIGN
-miniature: assets/miniature.png
+miniature: /assets/miniature.png
 ---
 # CECI EST UN TEST
 

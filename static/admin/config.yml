@@ -3,7 +3,7 @@ backend:
   repo: IlanAMG/devtrotter-blog
 
 media_folder: content/assets
-public_folder: assets
+public_folder: /assets
 site_url: https://sad-austin-264f84.netlify.app/
 
 collections:
