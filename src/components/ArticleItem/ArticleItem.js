@@ -7,11 +7,16 @@ import StyledArticleItem from './StyledArticleItem';
 export const ArticleItem = ({ node, title, author }) => {
     return (
         <StyledArticleItem>
+        {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
             <Img
                 fluid={node.frontmatter.miniature.childImageSharp.fluid}
                 style={{ height: 225, width: 225, float: 'right' }}
                 alt={title}
             />
+        : 
+            <img alt={title} src={node.frontmatter.miniature.publicURL} />
+
+        }
             <div className='container-article-right'>
                     <h6>
                         {node.frontmatter.categorie}

@@ -7,10 +7,15 @@ import StyledLastArticle from './StyledLastArticle';
 export const LastArticle = ({ node, title, author }) => {
     return (
         <StyledLastArticle key={node.fields.slug}>
+        {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
             <Img
                 fixed={node.frontmatter.miniature.childImageSharp.fixed}
                 alt={title}
             />
+        : 
+            <img alt={title} src={node.frontmatter.miniature.publicURL} />
+
+        }
             <div className='container-article-right'>
                     <h6>
                         {node.frontmatter.categorie}
