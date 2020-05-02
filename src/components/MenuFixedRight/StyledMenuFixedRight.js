@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledMenuFixedRight = styled.section`
-    background-color: white;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,8 +27,9 @@ const StyledMenuFixedRight = styled.section`
     }
 
     .separator {
-        width: 80%;
+        width: 230px;
         height: 2px;
+        min-height: 2px;
         background-color: #2D2D2D;
         margin: 30px 0 30px 0;
     }

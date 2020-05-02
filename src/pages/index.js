@@ -11,11 +11,7 @@ import { MenuFixedRight } from '../components/MenuFixedRight/MenuFixedRight';
 import useWindowSize from '../untils/useWindowSize';
 
 const BlogIndex = ({ data, location }) => {
-  const [styleFixedIndex, setStyleFixedIndex] = useState({
-    'marginRight': 0,
-    'top': '65px',
-    'position': 'fixed'
-  })
+  const [styleFixedIndex, setStyleFixedIndex] = useState({})
   const [fixedIndex, setFixedIndex] = useState(false)
 
   const ref = useRef(null)
@@ -37,10 +33,23 @@ const BlogIndex = ({ data, location }) => {
 
   const fixedIndexOnScroll = () => {
     const distanceTopAndContainerIndex = ref.current.getBoundingClientRect().y
-    if (distanceTopAndContainerIndex <= 60) {
-      setFixedIndex(true)
+    const distanceBottomAndContainerIndex = ref.current.getBoundingClientRect().bottom
+    const containerFixed = window.innerHeight
+    console.log(containerFixed)
+    if (distanceBottomAndContainerIndex <= containerFixed) {
+      setStyleFixedIndex({
+        ...styleFixedIndex,
+        'bottom': '0px',
+        'position': 'absolute'
+      })
+    } else if (distanceTopAndContainerIndex <= 60) {
+      setStyleFixedIndex({
+        ...styleFixedIndex,
+        'top': '65px',
+        'position': 'fixed'
+      })
     } else {
-      setFixedIndex(false)
+      setStyleFixedIndex({...styleFixedIndex, 'top': '0px'})
     }
   }
 
@@ -58,6 +67,7 @@ const BlogIndex = ({ data, location }) => {
 
   useEffect(() => {
     getMarginRightFixedIndex()
+    fixedIndexOnScroll()
   }, [sizeWindow])
 
   return (

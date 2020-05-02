@@ -7,6 +7,7 @@ const StyledListArticles = styled.article`
     min-height: 1000px;
     flex-direction: column;
     align-items: space-between;
+    margin-right: 10px;
 `
 
 export default StyledListArticles;
