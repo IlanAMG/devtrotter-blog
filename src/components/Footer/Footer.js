@@ -8,7 +8,7 @@ export const Footer = () => {
             <div className='container-footer-contact'>
                 <span>À propos</span>
                 <span>Nous contacter / Travailler avec nous</span>
-                <span>Participer au blog</span>
+                <span>Contribuer au blog</span>
             </div>
             <div className='container-footer-sign'>
                 <span>Develop and Designed</span>

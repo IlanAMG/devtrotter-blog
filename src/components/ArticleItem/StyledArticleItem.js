@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 const StyledArticleItem = styled.article`
-    width: 100%;
+    width: auto;
     height: 225px;
     margin-bottom: 50px;
+    padding-left: 10px;
 
     .container-article-right {
         display: flex;

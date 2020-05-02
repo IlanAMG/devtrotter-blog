@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import { ArticleItem } from '../components/ArticleItem/ArticleItem';
 import { ListArticles } from '../components/ListArticles/ListArticles';
 import { LastArticle } from "../components/LastArticle/LastArticle"
+import { MenuFixedRight } from '../components/MenuFixedRight/MenuFixedRight';
 import useWindowSize from '../untils/useWindowSize';
 
 const BlogIndex = ({ data, location }) => {
@@ -87,11 +88,7 @@ const BlogIndex = ({ data, location }) => {
             return
           })}
         </ListArticles>
-        
-        <div style={fixedIndex ? styleFixedIndex : null} className='container-index-infos-right'>
-
-        </div>
-
+        <MenuFixedRight fixedIndex={fixedIndex} styleFixedIndex={styleFixedIndex} />
       </div>
     </Layout>
   )

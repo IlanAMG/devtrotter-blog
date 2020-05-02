@@ -5,6 +5,6 @@ title: fqsfjkqsdf
 categorie: JEUX VIDEOS
 miniature: /assets/1-convertimage.jpg
 ---
-![img](/assets/20141017_104551.jpg "img")
+![img](/assets/miniature.png "img")
 
 qsdf:jnmqdjskfmsqbf

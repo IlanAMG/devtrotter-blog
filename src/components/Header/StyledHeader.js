@@ -56,6 +56,7 @@ const StyledHeader = styled.header`
         background: #0079c6;
         font-size: 1.6em;
         color: white;
+        cursor: pointer;
     }
 
     .wrapper-social {
@@ -67,19 +68,61 @@ const StyledHeader = styled.header`
         align-items: center;
         justify-content: center;
         font-size: 1.2em;
+        cursor: pointer;
     }
     
     .wrapper-social.twitter {
         color: #00b9ff;
+        transition: 400ms;
+    }
+    .wrapper-social.twitter:hover {
+        color: white;
+        background-color: #00b9ff;
+        transition: 400ms;
     }
     .wrapper-social.insta svg * {
         fill: url(#rg);
+        transition: 400ms;
+    }
+
+    .wrapper-social.insta:hover {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        transition: 400ms;
     }
     .wrapper-social.youtube {
        color: #c4302b;
+       transition: 400ms;
+    }
+    .wrapper-social.youtube:hover {
+       color: white;
+       background-color: #c4302b;
+       transition: 400ms;
     }
     .wrapper-social.mail {
        color: #E6AC67;
+       transition: 400ms;
+    }
+    .wrapper-social.mail:hover {
+       background-color: #E6AC67;
+       color: white;
+       transition: 400ms;
+    }
+
+    input {
+        position: fixed;
+        top: 65px;
+        right: 0px;
+        width: 246px;
+        height: 18px;
+        padding: 7px;
+        outline: none;
+        font-size: 1em;
+        color: grey;
+    }
+    input::placeholder {
+        font-style: italic;
+        font-size: 1em;
+        color: #B5B5B5;
     }
     
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');

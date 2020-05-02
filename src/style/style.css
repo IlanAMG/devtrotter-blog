@@ -50,7 +50,7 @@ footer span, small {
 	font-weight: 100;
 }
 
-h6 {
+h6, h2 {
 	font-family: 'Oswald';
 }
 
@@ -59,7 +59,7 @@ h6 {
 	font-weight: 900;
 }
 
-.container-article-right p {
+p {
 	font-family: 'Assistant';
 	letter-spacing: 0.06em;
 }
@@ -77,6 +77,13 @@ h6 {
 	display: flex;
 	justify-content: space-between;
 	position: relative;
+}
+
+.wrapper-container-index-infos-right {
+	margin-left: 10px;
+	width: 280px;
+	min-width: 280px;
+	height: calc(100vh - 65px);
 }
 
 .container-index-infos-right {

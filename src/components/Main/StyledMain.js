@@ -9,6 +9,7 @@ const StyledMain = styled.div`
     align-items: center;
     flex-direction: column;
     padding-top: 50px;
+    padding-bottom: 60px;
 }
 `
 
