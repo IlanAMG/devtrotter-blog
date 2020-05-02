@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: IlanAMG/devtrotter-blog
 
 media_folder: content/assets
 public_folder: assets
