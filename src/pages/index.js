@@ -1,45 +1,98 @@
-import React from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+import '../style/style.css'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { ArticleItem } from '../components/ArticleItem/ArticleItem';
+import { ListArticles } from '../components/ListArticles/ListArticles';
+import { LastArticle } from "../components/LastArticle/LastArticle"
+import useWindowSize from '../untils/useWindowSize';
 
 const BlogIndex = ({ data, location }) => {
+  const [styleFixedIndex, setStyleFixedIndex] = useState({
+    'marginRight': 0,
+    'top': '65px',
+    'position': 'fixed'
+  })
+  const [fixedIndex, setFixedIndex] = useState(false)
+
+  const ref = useRef(null)
+  const sizeWindow = useWindowSize();
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  const author = data.site.siteMetadata.author.name
+
+  const getMarginRightFixedIndex = () => {
+    const widthContainerIndex = ref.current.clientWidth
+    const widthWindow = window.innerWidth
+    const marginRight = (widthWindow - widthContainerIndex) / 2
+
+    setStyleFixedIndex({
+      ...styleFixedIndex,
+      'marginRight': marginRight
+    })
+  }
+
+  const fixedIndexOnScroll = () => {
+    const distanceTopAndContainerIndex = ref.current.getBoundingClientRect().y
+    if (distanceTopAndContainerIndex <= 60) {
+      setFixedIndex(true)
+    } else {
+      setFixedIndex(false)
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener('scroll', fixedIndexOnScroll, { passive: true });
+    }, 100)
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      window.removeEventListener('scroll', fixedIndexOnScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    getMarginRightFixedIndex()
+  }, [sizeWindow])
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
+      <SEO title="Home" />
+
+      {posts.map(({ node }, i) => {
         const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
+        if (i === 0) {
+          // DERNIER ARTICLE
+          return (
+            <>
+              <LastArticle author={author} node={node} title={title} />
+              <div className='divider'></div>
+            </>
+          )
+        }
       })}
+      <div className='container-index' ref={ref}>
+        <ListArticles>
+          {posts.map(({ node }, i) => {
+            const title = node.frontmatter.title || node.fields.slug
+            if (i > 0) {
+              return (
+                <ArticleItem author={author} node={node} title={title} key={node.fields.slug} />
+              )
+            } 
+            return
+          })}
+        </ListArticles>
+        
+        <div style={fixedIndex ? styleFixedIndex : null} className='container-index-infos-right'>
+
+        </div>
+
+      </div>
     </Layout>
   )
 }
@@ -51,6 +104,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -64,6 +120,17 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            categorie
+            image {
+              childImageSharp {
+                fluid(maxWidth: 225) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+                fixed(height: 480, width: 580) {
+                  ...GatsbyImageSharpFixed_withWebp
+                }
+              }
+            }
           }
         }
       }

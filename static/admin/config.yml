@@ -1,0 +1,18 @@
+backend:
+  name: test-repo
+
+media_folder: content/assets
+public_folder: assets
+
+collections:
+  - name: blog
+    label: Article
+    folder: content/blog
+    create: true
+    fields:
+      - { name: slug, label: Slug }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: categorie, label: Catégorie, widget: 'select', options: ['WEB', 'DESIGN', 'MOBILE', 'JEUX VIDEOS'], default: ["WEB"] }
+      - { name: miniature, label: Miniature, widget: image }
+      - { name: body, label: Body, widget: markdown }
