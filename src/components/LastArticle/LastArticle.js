@@ -8,7 +8,7 @@ export const LastArticle = ({ node, title, author }) => {
     return (
         <StyledLastArticle key={node.fields.slug}>
             <Img
-                fixed={node.frontmatter.image.childImageSharp.fixed}
+                fixed={node.frontmatter.miniature.childImageSharp.fixed}
                 alt={title}
             />
             <div className='container-article-right'>

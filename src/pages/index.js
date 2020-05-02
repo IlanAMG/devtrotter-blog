@@ -121,7 +121,7 @@ export const pageQuery = graphql`
             title
             description
             categorie
-            image {
+            miniature {
               childImageSharp {
                 fluid(maxWidth: 225) {
                   ...GatsbyImageSharpFluid_withWebp

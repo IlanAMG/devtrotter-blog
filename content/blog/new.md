@@ -3,7 +3,7 @@ title: New Beginnings 2
 date: "2015-05-28T22:40:32.169Z"
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 categorie: WEB
-image: /assets/salty_egg.jpg
+miniature: /assets/dev-trotter.png
 ---
 
 - This however showed weasel

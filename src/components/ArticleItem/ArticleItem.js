@@ -8,7 +8,7 @@ export const ArticleItem = ({ node, title, author }) => {
     return (
         <StyledArticleItem>
             <Img
-                fluid={node.frontmatter.image.childImageSharp.fluid}
+                fluid={node.frontmatter.miniature.childImageSharp.fluid}
                 style={{ height: 225, width: 225, float: 'right' }}
                 alt={title}
             />
