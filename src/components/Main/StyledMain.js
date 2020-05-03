@@ -10,6 +10,7 @@ const StyledMain = styled.div`
     flex-direction: column;
     padding-top: 50px;
     padding-bottom: 60px;
+    min-height: 80vh;
 }
 `
 

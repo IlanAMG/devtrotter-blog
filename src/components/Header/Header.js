@@ -10,7 +10,7 @@ import Img from 'gatsby-image'
 
 import StyledHeader from './StyledHeader';
 
-export const Header = () => {
+export const Header = ({ pageTitle }) => {
     const [instaHover, setInstaHover] = useState(false)
     const [showInput, setShowInput] = useState(false)
 
@@ -30,15 +30,13 @@ export const Header = () => {
             }
         }
     `)
-
-    const siteTitle = data.site.siteMetadata.title
     const logo = data.logo.childImageSharp.fixed
-
+    
     return (
         <StyledHeader>
             <Link to='/' className='wrapper-header left'>
                 <Img fixed={logo} alt='logo' />
-                <h1>{siteTitle}</h1>
+                <h1>{pageTitle}</h1>
             </Link>
             <div className='wrapper-header right'>
                 <a href="mailto:devtrotter.info@gmail.com" className='wrapper-social mail'>

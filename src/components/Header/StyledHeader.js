@@ -32,7 +32,7 @@ const StyledHeader = styled.header`
     
     .wrapper-header.left {
         justify-content: space-around;
-        width: 255px;
+        width: 300px;
     }
 
     .wrapper-header.left h1 {

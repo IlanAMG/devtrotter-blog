@@ -92,6 +92,10 @@ const StyledFooter = styled.footer`
         padding: 25px;
         text-align: center;
     }
+    .container-form h4 a {
+        color: #F8DD8B;
+        font-style: 900;
+    }
     .container-form form {
         display: flex;
         align-items: center;

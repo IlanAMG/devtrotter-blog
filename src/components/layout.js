@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { ThemeProvider } from 'styled-components'
 import LightTheme from '../style/themes/LightTheme';
 
@@ -9,10 +8,15 @@ import { Footer } from './Footer/Footer';
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  
+
+  if (location.pathname === rootPath) {
+    title = 'Dev Trotter - Blog'
+  } else if (location.pathname === '/apropos') {
+    title = 'Dev Trotter - À propos'
+  }
   return (
     <ThemeProvider theme={LightTheme}>
-      <Header />
+      <Header pageTitle={title} />
       <Main>
         {children}
       </Main>

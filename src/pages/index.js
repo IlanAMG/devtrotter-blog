@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import '../style/style.css'
 import Layout from "../components/layout"
@@ -9,6 +9,7 @@ import { ListArticles } from '../components/ListArticles/ListArticles';
 import { LastArticle } from "../components/LastArticle/LastArticle"
 import { MenuFixedRight } from '../components/MenuFixedRight/MenuFixedRight';
 import useWindowSize from '../untils/useWindowSize';
+import FlecheGoTop from "../components/FlecheGoTop"
 
 const BlogIndex = ({ data, location }) => {
   const [styleFixedIndex, setStyleFixedIndex] = useState({})
@@ -98,6 +99,7 @@ const BlogIndex = ({ data, location }) => {
         </ListArticles>
         <MenuFixedRight styleFixedIndex={styleFixedIndex} />
       </div>
+      <FlecheGoTop sizeWindow={sizeWindow} />
     </Layout>
   )
 }

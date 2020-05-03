@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "gatsby"
 import emailjs from 'emailjs-com'
 import { IoMdClose } from 'react-icons/io';
 
@@ -75,7 +76,7 @@ export const Footer = () => {
                 <div className='container-footer-contact' style={styleContact}>
                     {!showForm ?
                         <>
-                            <span>À propos</span>
+                            <Link to='/apropos'><span>À propos</span></Link>
                             <span onClick={() => handleClick(1)}>Nous contacter / Travailler avec nous</span>
                             <span onClick={() => handleClick(2)}>Contribuer au blog</span>
                         </>
@@ -85,7 +86,7 @@ export const Footer = () => {
                                 <IoMdClose />
                             </div>
                             <h3>{titleForm}</h3>
-                            <h4>{subTitleForm}</h4>
+                            <h4>{subTitleForm}<a href='mailto:devtrotter.info@gmail.com'>devtrotter.info@gmail.com</a></h4>
                             <form onSubmit={sendEmail}>
                                 <div className='container-input'>
                                     <input onChange={e => setState({ ...state, user_name: e.target.value })} value={state.user_name} placeholder='Nom et prénom' type="text" name="user_name" required />

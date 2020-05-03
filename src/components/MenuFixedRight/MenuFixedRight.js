@@ -9,7 +9,7 @@ export const MenuFixedRight = ({ styleFixedIndex }) => {
             <h2>Tu veux être tenu au courant des nouveaux articles ?</h2>
             <div className='separator'></div>
             <p>Si vous avez appris des choses avec nos articles, pensez à vous inscrire à la newsletter de Dev Trotter, où nous vous envoyons dès leurs sorties les nouveaux articles et les nouvelles vidéos sur youtube. Passion à volonté !</p>
-            <form name='newsletter' method='POST' data-netlify='true' data-netlify-honeypot='bot-field' action='/'>
+            <form name='newsletter' method='POST' data-netlify='true' data-netlify-honeypot='bot-field'>
                 <label>Votre adresse Email :</label>
                 <input placeholder='Votre email...' type="email" name="email" id="email" required />
                 <input type='hidden' name='form-name' value='newsletter'/>
