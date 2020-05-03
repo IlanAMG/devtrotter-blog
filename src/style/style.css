@@ -50,7 +50,7 @@ footer span, small {
 	font-weight: 100;
 }
 
-h6, h2 {
+h6, h2, h3 {
 	font-family: 'Oswald';
 }
 
@@ -59,7 +59,11 @@ h6, h2 {
 	font-weight: 900;
 }
 
-p {
+p, h4, button, label {
+	font-family: 'Assistant';
+	letter-spacing: 0.06em;
+}
+::placeholder {
 	font-family: 'Assistant';
 	letter-spacing: 0.06em;
 }

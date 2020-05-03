@@ -12,7 +12,6 @@ import useWindowSize from '../untils/useWindowSize';
 
 const BlogIndex = ({ data, location }) => {
   const [styleFixedIndex, setStyleFixedIndex] = useState({})
-  const [fixedIndex, setFixedIndex] = useState(false)
 
   const ref = useRef(null)
   const sizeWindow = useWindowSize();
@@ -35,7 +34,6 @@ const BlogIndex = ({ data, location }) => {
     const distanceTopAndContainerIndex = ref.current.getBoundingClientRect().y
     const distanceBottomAndContainerIndex = ref.current.getBoundingClientRect().bottom
     const containerFixed = window.innerHeight
-    console.log(containerFixed)
     if (distanceBottomAndContainerIndex <= containerFixed) {
       setStyleFixedIndex({
         ...styleFixedIndex,
@@ -98,7 +96,7 @@ const BlogIndex = ({ data, location }) => {
             return
           })}
         </ListArticles>
-        <MenuFixedRight fixedIndex={fixedIndex} styleFixedIndex={styleFixedIndex} />
+        <MenuFixedRight styleFixedIndex={styleFixedIndex} />
       </div>
     </Layout>
   )

@@ -9,7 +9,7 @@ import { Footer } from './Footer/Footer';
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  console.log(children)
+  
   return (
     <ThemeProvider theme={LightTheme}>
       <Header />
