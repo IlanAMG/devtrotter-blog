@@ -5,7 +5,7 @@ const StyledMenuFixedRight = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
 
     form {
         display: flex;

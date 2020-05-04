@@ -7,32 +7,31 @@ import StyledArticleItem from './StyledArticleItem';
 export const ArticleItem = ({ node, title, author }) => {
     return (
         <StyledArticleItem>
-        {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
-            <Img
-                fluid={node.frontmatter.miniature.childImageSharp.fluid}
-                style={{ height: 225, width: 225, float: 'right' }}
-                alt={title}
-            />
-        : 
-            null
-
-        }
-            <div className='container-article-right'>
-                    <h6>
-                        {node.frontmatter.categorie}
-                    </h6>
-                    <h2>
-                        <Link className='title-lastarticle' to={node.fields.slug}>
+        <Link to={node.fields.slug}>
+            {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
+                <Img
+                    fluid={node.frontmatter.miniature.childImageSharp.fluid}
+                    style={{ height: 225, width: 225, float: 'right' }}
+                    alt={title}
+                />
+            : 
+                null
+            }
+                <div className='container-article-right'>
+                        <h6>
+                            {node.frontmatter.categorie}
+                        </h6>
+                        <h2 className='title-lastarticle'>
                             {title}
-                        </Link>
-                    </h2>
-                    <p
-                        dangerouslySetInnerHTML={{
-                            __html: node.frontmatter.description || node.excerpt,
-                        }}
-                    />
-                    <small>By <font>{author}</font> | {node.frontmatter.date}</small>
-            </div>
+                        </h2>
+                        <p
+                            dangerouslySetInnerHTML={{
+                                __html: node.frontmatter.description || node.excerpt,
+                            }}
+                        />
+                        <small>By <Link to='/apropos'>{author}</Link> | {node.frontmatter.date}</small>
+                </div>
+            </Link>
         </StyledArticleItem>
     )
 }

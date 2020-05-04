@@ -44,7 +44,7 @@ const StyledArticleItem = styled.article`
         color: grey;
     }
 
-    .container-article-right font {
+    .container-article-right small a {
         font-size: 1em;
         color: #2D2D2D;
     }

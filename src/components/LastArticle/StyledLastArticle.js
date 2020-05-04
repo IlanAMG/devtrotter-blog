@@ -7,6 +7,14 @@ const StyledLastArticle = styled.article`
     align-items: center;
     justify-content: space-between;
 
+    .link-last-article {
+        max-width: 1100px;
+        height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+    }
+
     .container-article-right {
         display: flex;
         flex-direction: column;
@@ -47,8 +55,8 @@ const StyledLastArticle = styled.article`
         color: grey;
     }
 
-    .container-article-right font {
-        font-size: 1.1em;
+    .container-article-right small a {
+        font-size: 1em;
         color: #2D2D2D;
     }
 `

@@ -4,11 +4,26 @@ module.exports = {
     author: {
       name: `Dev Trotter`,
       summary: `who lives and works in San Francisco building useful things.`,
+      ilan: {
+        name: `Ilan Amzallag`,
+        picture: `profil-ilan.jpg`,
+        desc: `ljndljhsqbfjhqsdbfkjsqd fksqdbf ksdqjfbksdqjfbqosdjhfbkqsdjhfbsqkjfbkjhsqdfkjqsdgfkqsdjf kqsdjfbsqdjf`,
+      },
+      seb: {
+        name: `Sébastien Chapuy`,
+        picture: `profil-seb.jpg`,
+        desc: `ljndljhsqbfjhqsdbfkjsqd fksqdbf ksdqjfbksdqjfbqosdjhfbkqsdjhfbsqkjfbkjhsqdfkjqsdgfkqsdjf kqsdjfbsqdjf`,
+      },
+      remi: {
+        name: `Rémi Neret`,
+        picture: `profil-remi.jpg`,
+        desc: `ljndljhsqbfjhqsdbfkjsqd fksqdbf ksdqjfbksdqjfbqosdjhfbkqsdjhfbsqkjfbkjhsqdfkjqsdgfkqsdjf kqsdjfbsqdjf`,
+      }
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Blog commaunautaire dans le domaine du développement Web, Mobile, UI/UX Design et Jeux vidéos.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      ilan: `https://ilanamzallag.com`,
     },
   },
   plugins: [

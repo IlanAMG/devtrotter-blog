@@ -7,31 +7,31 @@ import StyledLastArticle from './StyledLastArticle';
 export const LastArticle = ({ node, title, author }) => {
     return (
         <StyledLastArticle key={node.fields.slug}>
-        {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
-            <Img
-                fixed={node.frontmatter.miniature.childImageSharp.fixed}
-                alt={title}
-            />
-        : 
-            null
-
-        }
-            <div className='container-article-right'>
-                    <h6>
-                        {node.frontmatter.categorie}
-                    </h6>
-                    <h2>
-                        <Link className='title-lastarticle' to={node.fields.slug}>
-                            {title}
-                        </Link>
-                    </h2>
-                    <p
-                        dangerouslySetInnerHTML={{
-                            __html: node.frontmatter.description || node.excerpt,
-                        }}
+            <Link className='link-last-article' to={node.fields.slug}>
+                {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
+                    <Img
+                        fixed={node.frontmatter.miniature.childImageSharp.fixed}
+                        alt={title}
                     />
-                    <small>By <font>{author}</font> | {node.frontmatter.date}</small>
-            </div>
+                : 
+                    null
+
+                }
+                    <div className='container-article-right'>
+                            <h6>
+                                {node.frontmatter.categorie}
+                            </h6>
+                            <h2 className='title-lastarticle' to={node.fields.slug}>
+                                {title}
+                            </h2>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html: node.frontmatter.description || node.excerpt,
+                                }}
+                            />
+                            <small>By <Link to='/apropos'>{author}</Link> | {node.frontmatter.date}</small>
+                    </div>
+            </Link>
         </StyledLastArticle>
     )
 }
