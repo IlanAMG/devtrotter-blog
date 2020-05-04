@@ -35,7 +35,7 @@ export const Header = ({ pageTitle }) => {
     return (
         <StyledHeader>
             <Link to='/' className='wrapper-header left'>
-                <Img fixed={logo} alt='logo' />
+                <Img style={{marginLeft: '30px', marginRight: '30px'}} fixed={logo} alt='logo' />
                 <h1>{pageTitle}</h1>
             </Link>
             <div className='wrapper-header right'>

@@ -13,6 +13,8 @@ const Layout = ({ location, title, children }) => {
     title = 'Dev Trotter - Blog'
   } else if (location.pathname === '/apropos') {
     title = 'Dev Trotter - À propos'
+  } else {
+    title = 'Dev Trotter - Blog'
   }
   return (
     <ThemeProvider theme={LightTheme}>

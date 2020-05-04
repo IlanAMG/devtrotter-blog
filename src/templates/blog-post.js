@@ -2,9 +2,16 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from 'gatsby-image';
 
-import Bio from "../components/bio"
+import RehypeReact from 'rehype-react'
+
+import bio from '../components/Bio/bio'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const renderAst = new RehypeReact({
+  createElement: React.createElement,
+  components: { 'bio': bio }
+}).Compiler
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -37,21 +44,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             }
         </header>
 
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        {/* <section dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+        <section>{renderAst(post.htmlAst)}</section>
       </article>
 
       <nav className='nav-prev-next'>
         <ul>
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link className='prev-next' to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link className='prev-next' to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -75,6 +83,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      htmlAst
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

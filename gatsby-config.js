@@ -49,11 +49,13 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-component`,
+          `gatsby-plugin-netlify-cms-paths`,
           'gatsby-remark-relative-images',
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 790,
             },
           },
           {
@@ -70,6 +72,14 @@ module.exports = {
             options: {
               target: '_blank',
             },
+          },
+          {
+            resolve: `@raae/gatsby-remark-oembed`, // plugin pour mettre des beau lien avec pleins de provider facebook twitter youtube etc..
+            options: {
+              providers: {
+                include: ['Twitter', 'YouTube', 'Sandbox', 'Instagram', 'CodePen']
+              }
+            }
           },
         ],
       },

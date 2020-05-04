@@ -37,7 +37,7 @@ qdslkhfbqhesbfqezfb<kjsfblsdhfblqsjhfbelzhebflh flhje fhjezq flqhj jlhdf lqjfhej
 
 `const code = 'ceci est du code'`
 
-Lien vers le [portfolio](www.ilanamzallag.com)
+Lien vers le [portfolio](https://www.ilanamzallag.com)
 
 ### Une petite liste : 
 
@@ -60,3 +60,5 @@ if (location.pathname === rootPath) {
 
 
 Bye bye
+
+<bio sign='Remi'></bio>
