@@ -77,7 +77,7 @@ module.exports = {
             resolve: `@raae/gatsby-remark-oembed`, // plugin pour mettre des beau lien avec pleins de provider facebook twitter youtube etc..
             options: {
               providers: {
-                include: ['Twitter', 'YouTube', 'Sandbox', 'Instagram', 'CodePen']
+                include: ['Twitter', 'YouTube', 'Sandbox', 'Instagram', 'Codepen']
               }
             }
           },
