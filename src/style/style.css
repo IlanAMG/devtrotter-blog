@@ -100,9 +100,202 @@ p, h4, button, label {
 	padding: 0 10px 0 10px;
 }
 
-/* /////////////////////////////////////////// */
-/* //////////// FLECHE GO TO TOP////////////// */
-/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* //////////// TEMPLATE ARTICLE ////////////// */
+/* //////////////////////////////////////////// */
+
+.template-article {
+	width: 95%;
+	word-wrap: break-word;
+	border-bottom: 1px solid rgb(179, 179, 179);
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+.template-article header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.wrapper-image {
+	width: 70%;
+	align-self: center;
+	margin: 40px;
+}
+
+.template-article header h1 {
+	font-family: 'Oswald';
+	text-transform: uppercase;
+	font-size: 2.8em;
+	font-weight: bold;
+	padding: 20px;
+	color: #2D2D2D;
+}
+
+.template-article header span {
+	font-family: 'Assistant';
+	font-size: 1.6em;
+	padding: 20px;
+	color: grey;
+}
+
+.template-article small {
+	font-size: 1em;
+	color: grey;
+}
+.template-article small a {
+	font-size: 1em;
+	color: #2D2D2D;
+	font-weight: bold;
+}
+
+.template-article section h1 {
+	font-family: 'Oswald';
+	font-size: 3.1em;
+	color: #2D2D2D;
+	font-weight: bold;
+	padding: 20px;
+}
+.template-article section h2 {
+	font-family: 'Oswald';
+	font-size: 2.8em;
+	color: #2D2D2D;
+	font-weight: bold;
+	padding: 20px;
+}
+.template-article section h3 {
+	font-family: 'Oswald';
+	font-size: 2.6em;
+	color: #2D2D2D;
+	font-weight: bold;
+	padding: 20px;
+}
+.template-article section h4 {
+	font-family: 'Oswald';
+	font-size: 2.3em;
+	color: #2D2D2D;
+	font-weight: bold;
+	letter-spacing: 0em;
+	padding: 20px;
+}
+.template-article section h5 {
+	font-family: 'Oswald';
+	font-size: 2em;
+	color: #2D2D2D;
+	font-weight: bold;
+	padding: 20px;
+}
+.template-article section h6 {
+	font-family: 'Oswald';
+	font-size: 1.8em;
+	color: #2D2D2D;
+	font-weight: bold;
+	padding: 20px;
+}
+.template-article section strong {
+	font-family: 'Source Sans Pro';
+	font-weight: 600;
+	color: black;
+}
+.template-article section em {
+	font-family: 'Source Sans Pro';
+	font-weight: 300;
+	font-style: italic;
+}
+.template-article section p {
+	font-family: 'Source Sans Pro';
+	color: #2D2D2D;
+	line-height: 32px;
+	font-size: 1.3em;
+	padding: 10px;
+}
+.template-article section ul{
+	margin-left: 40px;
+	font-size: 20px !important;
+	list-style: inside;
+}
+.template-article section ol{
+	margin-left: 40px;
+	font-size: 20px !important;
+	list-style: decimal;
+}
+
+.template-article section a {
+	font-family: 'Source Sans Pro';
+	color: #0079c6;
+	font-weight: 600;
+	line-height: 32px;
+	transition: 300ms
+}
+.template-article section a:hover {
+	color: #21a4f5;
+	transition: 300ms
+}
+
+blockquote{
+	display:block;
+	background: #fff;
+	margin: 10px 50px 10px 50px;
+	padding: 20px 20px 20px 30px;
+	position: relative;
+	font-family: 'Source Sans pro';
+	font-size: 1em;
+	line-height: 1.2;
+	color: #666;
+	text-align: justify;
+	border-left: 15px solid #3d3d3d;
+	border-right: 5px solid #383838;
+	-moz-box-shadow: 2px 2px 15px #ccc;
+	-webkit-box-shadow: 2px 2px 15px #ccc;
+	box-shadow: 2px 2px 15px #ccc;
+	}
+	blockquote::before{
+	content: “201C”; /*Unicode for Left Double Quote*/
+	font-family: 'Source Sans Pro';
+	font-size: 1em;
+	font-weight: bold;
+	color: #999;
+	position: absolute;
+	left: 10px;
+	top:5px;
+	}
+	blockquote::after{
+	content: “”;
+	}
+	blockquote a{
+	text-decoration: none;
+	background: #eee;
+	cursor: pointer;
+	padding: 0 3px;
+	color: #252525;
+	}
+	blockquote a:hover{
+	color: #666;
+	}
+	blockquote em{
+	font-style: italic;
+	}
+
+	.nav-prev-next {
+		height: 100px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding-top: 30px;
+	}
+	.nav-prev-next  ul{
+		display: flex;
+		height: 50px;
+		width: 40%;
+		justify-content: space-around;
+	}
+
+/* //////////////////////////////////////////// */
+/* //////////// FLECHE GO TO TOP ////////////// */
+/* //////////////////////////////////////////// */
 
 #cRetour{
     outline-style: none;
@@ -139,8 +332,10 @@ p, h4, button, label {
   #cRetour.cVisible{
     bottom:20px;
     opacity:1;
-  }
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');

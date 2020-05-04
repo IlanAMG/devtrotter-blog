@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from 'gatsby-image';
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -17,23 +18,29 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <article>
+      <article className='template-article'>
         <header>
           <h1>
             {post.frontmatter.title}
           </h1>
-          <p>
-            {post.frontmatter.date}
-          </p>
+            {post.frontmatter.description && <span>{post.frontmatter.description}</span>}
+          <small>By <Link to='/apropos'>Dev Trotter</Link> | {post.frontmatter.date}</small>
+          {!!post.frontmatter.miniature && !!post.frontmatter.miniature.childImageSharp ?
+            <div className='wrapper-image'>
+                <Img
+                    fluid={post.frontmatter.miniature.childImageSharp.fluid}
+                    alt='miniature'
+                />
+            </div>
+            : 
+                null
+            }
         </header>
+
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
-        <footer>
-          <Bio />
-        </footer>
       </article>
 
-      <nav>
+      <nav className='nav-prev-next'>
         <ul>
           <li>
             {previous && (
@@ -72,6 +79,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        categorie
+        miniature {
+          childImageSharp {
+            fluid(maxHeight: 500) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }
