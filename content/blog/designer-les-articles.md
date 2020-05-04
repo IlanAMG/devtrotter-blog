@@ -35,11 +35,13 @@ qsdjfpjknsqdfkjsqblfjkbsqlfkbsdqlfhsqbdlhqsdhjfbsqhdfbfiunnhelcuHRLIUfgdqshfnqsh
 
 qdslkhfbqhesbfqezfb<kjsfblsdhfblqsjhfbelzhebflh flhje fhjezq flqhj jlhdf lqjfhejlhfblzhBFLEIFBQKLEFBLSQEFBSQLEHFBHJSBF.
 
+<https://www.youtube.com/watch?v=tSyXb0sHBoE&t=13s>
+
 `const code = 'ceci est du code'`
 
 Lien vers le [portfolio](https://www.ilanamzallag.com)
 
-### Une petite liste : 
+### Une petite liste :
 
 1. 1
 2. blbla
@@ -56,8 +58,6 @@ if (location.pathname === rootPath) {
     title = 'Dev Trotter - À propos'
   }
 ```
-
-
 
 Bye bye
 
