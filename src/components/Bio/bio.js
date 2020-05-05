@@ -8,6 +8,7 @@ const Bio = ({ sign }) => {
   const [social, setSocial] = useState([])
   const [name, setName] = useState('')
   const [picture, setPicture] = useState({})
+  const [desc, setDesc] = useState('')
 
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -37,6 +38,15 @@ const Bio = ({ sign }) => {
           author {
             name
             summary
+            ilan {
+              desc
+            }
+            seb {
+              desc
+            }
+            remi {
+              desc
+            }
           }
         }
       }
@@ -60,6 +70,7 @@ const Bio = ({ sign }) => {
       ])
       setName('Ilan Amzallag')
       setPicture(data.profilIlan.childImageSharp.fixed)
+      setDesc(data.site.siteMetadata.author.ilan.desc)
     } else if (sign === 'Seb') {
       setSocial([
         {
@@ -73,6 +84,7 @@ const Bio = ({ sign }) => {
       ])
       setName('Sebastien Chapuy')
       setPicture(data.profilSeb.childImageSharp.fixed)
+      setDesc(data.site.siteMetadata.author.seb.desc)
     } else if (sign === 'Remi') {
       setSocial([
         {
@@ -82,6 +94,7 @@ const Bio = ({ sign }) => {
       ])
       setName('Remi Neret')
       setPicture(data.profilRemi.childImageSharp.fixed)
+      setDesc(data.site.siteMetadata.author.remi.desc)
     }
   }, [sign])
 
@@ -89,7 +102,7 @@ const Bio = ({ sign }) => {
     <StyledBio>
       <div className='container-desc-bio'>
         <h3>{name}</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione consequuntur culpa dolorem soluta nisi fugiat assumenda, et voluptas a doloremque perspiciatis fugit porro quod voluptates quas minima, in eligendi unde sit ad quaerat tenetur. Sed accusamus modi dignissimos eius rerum!</p>
+        <p>{desc}</p>
         <div className='container-social'>
           {social &&
             social.map((item, i) => {

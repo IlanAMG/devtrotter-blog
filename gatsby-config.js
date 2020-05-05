@@ -7,17 +7,17 @@ module.exports = {
       ilan: {
         name: `Ilan Amzallag`,
         picture: `profil-ilan.jpg`,
-        desc: `ljndljhsqbfjhqsdbfkjsqd fksqdbf ksdqjfbksdqjfbqosdjhfbkqsdjhfbsqkjfbkjhsqdfkjqsdgfkqsdjf kqsdjfbsqdjf`,
+        desc: `Jeune développeur de 23 ans autodidacte, j'ai toujours aimé les nouvelles technologies et l'informatique. J'apprends la programmation de manière autodidacte depuis plus d'1 an et c'est rapidement devenu ma plus grande passion. J'ai toujours aimé apprendre des nouveaux savoirs et les partager, ce sera mon cap durant mon apprentissage.`,
       },
       seb: {
         name: `Sébastien Chapuy`,
         picture: `profil-seb.jpg`,
-        desc: `ljndljhsqbfjhqsdbfkjsqd fksqdbf ksdqjfbksdqjfbqosdjhfbkqsdjhfbsqkjfbkjhsqdfkjqsdgfkqsdjf kqsdjfbsqdjf`,
+        desc: `Jeune développeur de 24 ans, j'ai découvert le monde informatique, qui a été un électrochoc. J'ai décidé de me reconvertir professionnellement dans le développement Web et le UI/UX Design, passant le plus clair de mon temps à coder. J'ai décidé de m'ouvrir aux différentes cultures numériques, accompagné de mes plus fidèles amis, et peut-être vous. Avant d'être une agence, nous sommes aussi une communauté.`,
       },
       remi: {
         name: `Rémi Neret`,
         picture: `profil-remi.jpg`,
-        desc: `ljndljhsqbfjhqsdbfkjsqd fksqdbf ksdqjfbksdqjfbqosdjhfbkqsdjhfbsqkjfbkjhsqdfkjqsdgfkqsdjf kqsdjfbsqdjf`,
+        desc: `Designer de 23 ans, baignant dans l’informatique depuis mon plus jeune âge, également friand de photographie, de dessin, d’art et de belles choses ; l’inspiration peut se trouver partout. J’ai décidé d’associer mes différentes passions et d’en faire mon métier. Je fais en sorte que l’emballage soit aussi beau et qualitatif que le contenu.`,
       }
     },
     description: `Blog commaunautaire dans le domaine du développement Web, Mobile, UI/UX Design et Jeux vidéos.`,

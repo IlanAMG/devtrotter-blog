@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 
 import StyledBioItem from './StyledBioItem';
 
-export const BioItem = ({ name, picture }) => {
+export const BioItem = ({ name, picture, desc }) => {
     const [social, setSocial] = useState([])
 
     useEffect(() => {
@@ -47,7 +47,7 @@ export const BioItem = ({ name, picture }) => {
         <StyledBioItem>
             <div className='container-desc-bio'>
                 <h3>{name}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione consequuntur culpa dolorem soluta nisi fugiat assumenda, et voluptas a doloremque perspiciatis fugit porro quod voluptates quas minima, in eligendi unde sit ad quaerat tenetur. Sed accusamus modi dignissimos eius rerum!</p>
+                <p>{desc}</p>
                 <div className='container-social'>
                     {social &&
                         social.map((item, i) => {

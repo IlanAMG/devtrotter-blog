@@ -8,8 +8,11 @@ import { SectionPropos } from '../components/SectionPropos/SectionPropos';
 const apropos = ({ data, location}) => {
     const siteTitle = data.site.siteMetadata.title
     const ilan = data.site.siteMetadata.author.ilan.name
+    const ilanDesc = data.site.siteMetadata.author.ilan.desc
     const seb = data.site.siteMetadata.author.seb.name
+    const sebDesc = data.site.siteMetadata.author.seb.desc
     const remi = data.site.siteMetadata.author.remi.name
+    const remiDesc = data.site.siteMetadata.author.remi.desc
     const pictureIlan = data.pictureIlan.childImageSharp.fixed
     const pictureSeb = data.pictureSeb.childImageSharp.fixed
     const pictureRemi = data.pictureRemi.childImageSharp.fixed
@@ -24,6 +27,9 @@ const apropos = ({ data, location}) => {
             ilan={ilan}
             seb={seb}
             remi={remi}
+            ilanDesc={ilanDesc}
+            sebDesc={sebDesc}
+            remiDesc={remiDesc}
           />
         </Layout>
     )

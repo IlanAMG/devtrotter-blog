@@ -22,7 +22,7 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav {
 	display: block;
 }
 body {
@@ -305,6 +305,38 @@ blockquote{
 		font-family: 'Oswald';
 		margin: 0 20px 0 20px;
 	}
+
+	p {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	iframe {
+		justify-self: center !important;
+		align-self: center !important;
+		margin: 0 !important;
+	}
+
+	iframe { 
+    margin: auto;
+    width: 80vw; 
+    max-width: 80vw;
+    min-height: 45vw;    
+  }
+  
+  @media (min-width:300px) {
+    iframe {
+      min-height: calc(80vw * 0.5628205128205128);
+	}
+  }
+  
+  @media all and (max-width: 450px) {
+      iframe {
+          width: 289px;
+          min-height: 163px;
+	  }
+  }
 
 /* //////////////////////////////////////////// */
 /* //////////// FLECHE GO TO TOP ////////////// */

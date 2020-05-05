@@ -70,4 +70,4 @@ if (location.pathname === rootPath) {
 
 Bye bye
 
-<bio sign='Remi'></bio>
+<bio sign='Seb'></bio>
