@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby';
+
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits, connectStateResults } from 'react-instantsearch-dom';
+import { PostPreview } from '../PostPreview/PostPreview'
+
 import { IoIosSearch } from 'react-icons/io';
 import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
@@ -10,28 +15,54 @@ import Img from 'gatsby-image'
 
 import StyledHeader from './StyledHeader';
 
+
 export const Header = ({ pageTitle }) => {
     const [instaHover, setInstaHover] = useState(false)
     const [showInput, setShowInput] = useState(false)
-
+    
     const data = useStaticQuery(graphql`
-        query headerQuery {
-            logo: file(absolutePath: { regex: "/dev-trotter.png/" }) {
-                childImageSharp {
-                    fixed(width: 40, height: 40) {
-                      ...GatsbyImageSharpFixed
-                    }
-                  }
-                }
-            site {
-                siteMetadata {
-                    title
+    query headerQuery {
+        logo: file(absolutePath: { regex: "/dev-trotter.png/" }) {
+            childImageSharp {
+                fixed(width: 40, height: 40) {
+                    ...GatsbyImageSharpFixed
                 }
             }
         }
+        site {
+            siteMetadata {
+                title
+            }
+        }
+    }
     `)
     const logo = data.logo.childImageSharp.fixed
+    const searchClient = algoliasearch('OHFSIIX20I', 'eef00803b18bbc0739cadeeaac4bacc7');
     
+    const IndexResults = connectStateResults(
+        ({ searchState, searchResults, children }) => {
+            if (searchState.query === undefined || !searchState.query ) {
+                return null;
+            } else if (searchResults && searchResults.nbHits !== 0) {
+                console.log(searchState.query)
+                return children;
+            } else {
+                return (
+                    <div className='noResults'>
+                    Pas de résultats pour votre recherche...
+                </div>
+                )
+            }
+        }
+        //   searchResults && searchResults.nbHits !== 0 && searchState && searchState.query ? (
+        //     children
+        //   ) : (
+        //     <div className='noResults'>
+        //       Pas de résultats pour votre recherche...
+        //     </div>
+        //   ) 
+      );
+
     return (
         <StyledHeader>
             <Link to='/' className='wrapper-header left'>
@@ -72,7 +103,13 @@ export const Header = ({ pageTitle }) => {
                 </div>
                 {
                     showInput &&
-                    <input type='text' placeholder='Rechercher un article' />
+                    <InstantSearch searchClient={searchClient} indexName="Posts">
+                        <SearchBox translations={{ placeholder: 'Rechercher...' }}/>
+                            <IndexResults>
+                                <Hits hitComponent={PostPreview} />
+                            </IndexResults>
+                    </InstantSearch>
+      
                 }
             </div>
         </StyledHeader>

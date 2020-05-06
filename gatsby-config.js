@@ -1,3 +1,6 @@
+const queries = require("./src/untils/algolia")
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Dev Trotter`,
@@ -44,6 +47,16 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-transformer-remark`,

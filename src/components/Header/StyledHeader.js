@@ -107,23 +107,65 @@ const StyledHeader = styled.header`
        transition: 400ms;
     }
 
-    input {
+    .ais-SearchBox-input {
         position: fixed;
         top: 65px;
         right: 0px;
-        width: 246px;
-        height: 18px;
-        padding: 7px;
+        width: 264px;
+        height: 40px;
         outline: none;
-        font-size: 1em;
+        font-size: 1.1em;
         color: grey;
+        border-radius: 0%;
+        border: 1px solid rgba(0,0,0,0.11);
     }
-    input::placeholder {
+
+    .ais-SearchBox-submit, .ais-SearchBox-reset {
+        display:none;
+        cursor:pointer;
+    }
+
+    .ais-SearchBox-input::placeholder {
         font-style: italic;
-        font-size: 1em;
+        font-size: 1.1em;
         color: #B5B5B5;
     }
+
+    .ais-Hits {
+        position: fixed;
+        top: 105px;
+        border-left:1px solid rgba(0,0,0,0.11);
+        border-bottom:1px solid rgba(0,0,0,0.11);
+        background-color: rgba(255,255,255,0.99);
+        overflow: scroll;
+        max-height: 70vh;
+        width: 264px;
+        z-index: 100;
+    }
+    .ais-Hits-list {
+        padding: 10px;
+    }
+
+    .ais-Hits-item {
+        margin-bottom: 10px;
+    }
     
+    .noResults {
+        position: fixed;
+        top: 105px;
+        border-left:1px solid rgba(0,0,0,0.11);
+        border-bottom:1px solid rgba(0,0,0,0.11);
+        background-color: rgba(255,255,255,0.99);
+        width: 264px;
+        z-index: 100;
+        font-size: 0.9em;
+        color: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 }
 `

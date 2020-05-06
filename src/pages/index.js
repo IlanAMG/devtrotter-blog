@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
+
 import { graphql } from "gatsby"
 
 import '../style/style.css'
@@ -21,14 +22,14 @@ const BlogIndex = ({ data, location }) => {
   const author = data.site.siteMetadata.author.name
 
   const getMarginRightFixedIndex = () => {
-    const widthContainerIndex = ref.current.clientWidth
-    const widthWindow = window.innerWidth
-    const marginRight = (widthWindow - widthContainerIndex) / 2
-
-    setStyleFixedIndex({
-      ...styleFixedIndex,
-      'marginRight': marginRight
-    })
+      const widthContainerIndex = ref.current.clientWidth
+      const widthWindow = window.innerWidth
+      const marginRight = (widthWindow - widthContainerIndex) / 2
+  
+      setStyleFixedIndex({
+        ...styleFixedIndex,
+        'marginRight': marginRight
+      })
   }
 
   const fixedIndexOnScroll = () => {
@@ -48,7 +49,7 @@ const BlogIndex = ({ data, location }) => {
         'position': 'fixed'
       })
     } else {
-      setStyleFixedIndex({...styleFixedIndex, 'top': '0px'})
+      setStyleFixedIndex({ ...styleFixedIndex, 'top': '0px' })
     }
   }
 
@@ -71,15 +72,15 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Home" />
-
+      <SEO title="Home" /> 
+      
       {posts.map(({ node }, i) => {
         const title = node.frontmatter.title || node.fields.slug
         if (i === 0) {
           // DERNIER ARTICLE
           return (
             <>
-              <LastArticle author={author} node={node} title={title} />
+              <LastArticle key={i} author={author} node={node} title={title} />
               <div className='divider'></div>
             </>
           )
@@ -93,7 +94,7 @@ const BlogIndex = ({ data, location }) => {
               return (
                 <ArticleItem author={author} node={node} title={title} key={node.fields.slug} />
               )
-            } 
+            }
             return
           })}
         </ListArticles>
