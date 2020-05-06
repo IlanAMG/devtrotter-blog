@@ -26,7 +26,7 @@ const StyledArticleItem = styled.article`
 
     .container-article-right .title-lastarticle {
         display: flex;
-        color: #2D2D2D;
+        color: ${({theme}) => theme.title};
         font-size: 2em;
         letter-spacing: 0.02em;
     }
@@ -35,18 +35,18 @@ const StyledArticleItem = styled.article`
         line-height: 24px;
         font-size: 1.2em;
         font-style: italic;
-        color: grey;
+        color: ${({theme}) => theme.paragraphe};
     }
 
     .container-article-right small {
         line-height: 24px;
         font-size: 1em;
-        color: grey;
+        color: ${({theme}) => theme.paragraphe};
     }
 
     .container-article-right small a {
         font-size: 1em;
-        color: #2D2D2D;
+        color: ${({theme}) => theme.title};
     }
 `
 

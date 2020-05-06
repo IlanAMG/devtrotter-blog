@@ -5,12 +5,12 @@ const StyledHeader = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background: ${ ({theme}) => theme.header.background};
+    background: ${ ({theme}) => theme.background};
     position: fixed;
     top: 5px;
     width: 100%;
     height: 60px;
-    border-bottom: 1px solid rgba(0,0,0,0.11);
+    border-bottom: 1px solid #EDEDED;
     z-index: 1;
 
     &::before {
@@ -38,7 +38,7 @@ const StyledHeader = styled.header`
         font-size: 24px;
         font-weight: 600;
         font-family: 'Patua One';
-        color: #010229;
+        color: ${ ({theme}) => theme.title};
     }
 
     .wrapper-header.right {
@@ -50,7 +50,7 @@ const StyledHeader = styled.header`
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60px;
+        height: 59px;
         width: 60px;
         background: #0079c6;
         font-size: 1.6em;
@@ -62,7 +62,7 @@ const StyledHeader = styled.header`
         background: transparent;
         width: 50px;
         height: 60px;
-        border-left: 1px solid rgba(0,0,0,0.11);
+        border-left: 1px solid #EDEDED;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -73,6 +73,7 @@ const StyledHeader = styled.header`
     .wrapper-social.twitter {
         color: #00b9ff;
         transition: 400ms;
+        border-right: 1px solid #EDEDED;
     }
     .wrapper-social.twitter:hover {
         color: white;
@@ -109,9 +110,9 @@ const StyledHeader = styled.header`
 
     .ais-SearchBox-input {
         position: fixed;
-        top: 65px;
+        top: 64px;
         right: 0px;
-        width: 264px;
+        width: 260px;
         height: 40px;
         outline: none;
         font-size: 1.1em;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby';
+import { Switch } from 'antd';
 
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectStateResults } from 'react-instantsearch-dom';
@@ -54,14 +55,11 @@ export const Header = ({ pageTitle }) => {
                 )
             }
         }
-        //   searchResults && searchResults.nbHits !== 0 && searchState && searchState.query ? (
-        //     children
-        //   ) : (
-        //     <div className='noResults'>
-        //       Pas de résultats pour votre recherche...
-        //     </div>
-        //   ) 
       );
+
+      function onChange(checked) {
+        console.log(`switch to ${checked}`);
+      }
 
     return (
         <StyledHeader>

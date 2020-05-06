@@ -14,11 +14,12 @@ const StyledBioItem = styled.div`
 
     h3 {
         font-size: 1.9em;
+        color: ${({theme}) => theme.title};
     }
 
     p {
         padding: 20px 0 20px 0;
-        color: grey;
+        color: ${({theme}) => theme.paragraphe};
         line-height: 24px;
         font-size: 1.1em;
     }

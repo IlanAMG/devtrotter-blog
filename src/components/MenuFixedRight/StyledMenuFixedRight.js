@@ -24,7 +24,7 @@ const StyledMenuFixedRight = styled.section`
     h2 {
         text-align: center;
         font-size: 1.8em;
-        color: #2D2D2D;
+        color: ${({theme}) => theme.title};
         font-weight: 500;
         padding-top: 30px;
     }
@@ -33,14 +33,15 @@ const StyledMenuFixedRight = styled.section`
         width: 230px;
         height: 2px;
         min-height: 2px;
-        background-color: #2D2D2D;
+        background-color: ${({theme}) => theme.title};
         margin: 30px 0 30px 0;
     }
 
     p {
         line-height: 22px;
-        color: grey;
+        color: ${({theme}) => theme.paragraphe};
         padding-bottom: 20px;
+        display: inline;
         text-align: justify;
     }
 
@@ -120,13 +121,14 @@ const StyledMenuFixedRight = styled.section`
     }
 
     label {
-        color: #2D2D2D;
+        color: ${({theme}) => theme.title};
         font-size: 0.9em;
     }
     a {
-        font-style: bold;
+        font-weigth: bold;
         color: #0079c6;
         text-decoration: none;
+        padding: 0 4px 0 4px;
     }
 `
 

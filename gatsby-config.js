@@ -94,6 +94,19 @@ module.exports = {
               }
             }
           },
+          {
+            resolve: "gatsby-plugin-less",
+            options: {
+              modifyVars: require("./src/style/themes/antd.js"),
+              javascriptEnabled: true,
+            },
+          },
+          {
+            resolve: "gatsby-plugin-antd",
+            options: {
+              style: true,
+            },
+          },
         ],
       },
     },

@@ -6,6 +6,7 @@ const StyledLastArticle = styled.article`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 10px;
 
     .link-last-article {
         max-width: 1100px;
@@ -37,7 +38,7 @@ const StyledLastArticle = styled.article`
 
     .container-article-right .title-lastarticle {
         display: flex;
-        color: #2D2D2D;
+        color: ${({theme}) => theme.title};
         font-size: 2.8em;
         letter-spacing: 0.02em;
     }
@@ -46,18 +47,18 @@ const StyledLastArticle = styled.article`
         line-height: 24px;
         font-size: 1.3em;
         font-style: italic;
-        color: grey;
+        color: ${({theme}) => theme.paragraphe};
     }
 
     .container-article-right small {
         line-height: 24px;
         font-size: 1.1em;
-        color: grey;
+        color: ${({theme}) => theme.paragraphe};
     }
 
     .container-article-right small a {
         font-size: 1em;
-        color: #2D2D2D;
+        color: ${({theme}) => theme.title};
     }
 `
 

@@ -7,6 +7,8 @@ import RehypeReact from 'rehype-react'
 import bio from '../components/Bio/bio'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StyledBlogPost from './StyledBlogPost';
+import StyledPrevNext from './StyledPrevNext';
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -25,7 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
 
-      <article className='template-article'>
+      <StyledBlogPost className='template-article'>
         <header>
           <h1>
             {post.frontmatter.title}
@@ -46,9 +48,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
         {/* <section dangerouslySetInnerHTML={{ __html: post.html }} /> */}
         <section>{renderAst(post.htmlAst)}</section>
-      </article>
+      </StyledBlogPost>
 
-      <nav className='nav-prev-next'>
+      <StyledPrevNext className='nav-prev-next'>
         <ul>
           <li>
             {previous && (
@@ -65,7 +67,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </StyledPrevNext>
     </Layout>
   )
 }

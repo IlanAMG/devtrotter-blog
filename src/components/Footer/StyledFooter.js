@@ -110,13 +110,11 @@ const StyledFooter = styled.footer`
         justify-content: space-between;
         flex-wrap: wrap;
         width: 100%;
-        height: 8%;
-        padding: 20px;
     }
     .container-form form input {
-        width: 28%;
+        width: 29%;
         height: 100%;
-        padding: 10px;
+        padding: 12px !important;
         font-size: 20px;
     }
     .container-form form textarea {

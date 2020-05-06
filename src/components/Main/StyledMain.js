@@ -11,6 +11,15 @@ const StyledMain = styled.div`
     padding-top: 50px;
     padding-bottom: 60px;
     min-height: 80vh;
+
+        .fond {
+            height: 120vh;
+            width: 120vw;
+            background-color: ${ ({theme}) => theme.background};
+            z-index: -999;
+            top: 0;
+            position: fixed;
+        }
 }
 `
 

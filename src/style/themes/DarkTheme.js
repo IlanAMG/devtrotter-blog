@@ -1,8 +1,8 @@
-const LightTheme = {
+const DarkTheme = {
 
-    background: 'rgba(255,255,255,0.99)',
-    title: '#010229',
-    paragraphe: 'grey',
+    background: '#21201b',
+    title: '#dfd1b7',
+    paragraphe: '#696355',
     
     footer: {
         iconGrey: "#929fa6",
@@ -12,4 +12,4 @@ const LightTheme = {
     }
 }
 
-export default LightTheme;
+export default DarkTheme;

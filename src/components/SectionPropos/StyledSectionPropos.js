@@ -12,12 +12,12 @@ const StyledSectionPropos = styled.section`
         text-transform: uppercase;
         font-size: 2.4em;
         font-weight: bold;
-        color: #2D2D2D;
+        color: ${({theme}) => theme.title};
     }
 
     .bio {
         padding: 30px 0 60px 0;
-        color: grey;
+        color: ${({theme}) => theme.paragraphe};
         line-height: 26px;
         font-size: 1.1em;
     }
