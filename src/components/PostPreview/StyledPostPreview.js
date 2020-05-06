@@ -36,6 +36,7 @@ const StyledPostPreview = styled.div`
         color: grey;
         font-style: italic;
         padding: 5px 0 5px 0;
+        line-height: 1em;
     }
     small {
         font-size: 0.7em;

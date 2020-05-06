@@ -57,7 +57,7 @@ export const Footer = () => {
             setShowForm(true)
         } else if (id === 2) {
             setTitleForm('Envie de partager votre passion ?')
-            setSubTitleForm('Vous pouvez nous proposer des sujets d\'articles ou devenir créateur de contenu avec nous.')
+            setSubTitleForm('Vous pouvez nous proposer des sujets d\'articles ou devenir créateur de contenu en remplissant ce formulaire ou sur ')
             setShowForm(true)
         }
     }
