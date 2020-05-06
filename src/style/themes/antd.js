@@ -9,7 +9,7 @@
 module.exports = {
     // primary color for all components
     "@primary-color": "#0079c6",
-    "@font-size-base": "24px",
+    "@font-size-base": "18px",
     
   }
   
