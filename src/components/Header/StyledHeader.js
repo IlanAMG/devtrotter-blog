@@ -35,7 +35,8 @@ const StyledHeader = styled.header`
     }
 
     .wrapper-header.left h1 {
-        font-size: 24px;
+        font-size: 24px !important;
+        margin: 0 !important;
         font-weight: 600;
         font-family: 'Patua One';
         color: ${ ({theme}) => theme.title};
@@ -53,7 +54,7 @@ const StyledHeader = styled.header`
         height: 59px;
         width: 60px;
         background: #0079c6;
-        font-size: 1.6em;
+        font-size: 1.6em !important;
         color: white;
         cursor: pointer;
     }
@@ -66,7 +67,7 @@ const StyledHeader = styled.header`
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2em;
+        font-size: 1.2em !important;
         cursor: pointer;
     }
     
@@ -115,7 +116,7 @@ const StyledHeader = styled.header`
         width: 260px;
         height: 40px;
         outline: none;
-        font-size: 1.1em;
+        font-size: 1.1em !important;
         color: grey;
         border-radius: 0%;
         border: 1px solid rgba(0,0,0,0.11);
@@ -128,7 +129,7 @@ const StyledHeader = styled.header`
 
     .ais-SearchBox-input::placeholder {
         font-style: italic;
-        font-size: 1.1em;
+        font-size: 1.1em !important;
         color: #B5B5B5;
     }
 
@@ -159,7 +160,7 @@ const StyledHeader = styled.header`
         background-color: rgba(255,255,255,0.99);
         width: 264px;
         z-index: 100;
-        font-size: 0.9em;
+        font-size: 0.9em !important;
         color: grey;
         display: flex;
         justify-content: center;

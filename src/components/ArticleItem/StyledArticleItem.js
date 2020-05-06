@@ -21,31 +21,31 @@ const StyledArticleItem = styled.article`
         padding: 5px;
         background-color: #0079c6;
         color: white;
-        font-size: 1em;
+        font-size: 1em !important;
     }
 
     .container-article-right .title-lastarticle {
         display: flex;
         color: ${({theme}) => theme.title};
-        font-size: 2em;
+        font-size: 2em !important;
         letter-spacing: 0.02em;
     }
 
     .container-article-right p {
         line-height: 24px;
-        font-size: 1.2em;
+        font-size: 1.2em !important;
         font-style: italic;
         color: ${({theme}) => theme.paragraphe};
     }
 
     .container-article-right small {
         line-height: 24px;
-        font-size: 1em;
+        font-size: 1em !important;
         color: ${({theme}) => theme.paragraphe};
     }
 
     .container-article-right small a {
-        font-size: 1em;
+        font-size: 1em !important;
         color: ${({theme}) => theme.title};
     }
 `
