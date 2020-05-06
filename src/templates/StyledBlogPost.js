@@ -9,6 +9,7 @@ const StyledBlogPost = styled.article`
     
 header h1 {
 	color: ${({theme}) => theme.title};
+	padding: 30px;
 }
 
 header span {
@@ -24,22 +25,28 @@ small a {
 
 section h1 {
 	color: ${({theme}) => theme.title};
+	padding: 30px;
 }
 
 section h2 {
 	color: ${({theme}) => theme.title};
+	padding: 30px;
 }
 section h3 {
 	color: ${({theme}) => theme.title};
+	padding: 30px;
 }
 section h4 {
 	color: ${({theme}) => theme.title};
+	padding: 30px;
 }
 section h5 {
 	color: ${({theme}) => theme.title};
+	padding: 30px;
 }
 section h6 {
 	color: ${({theme}) => theme.title};
+	padding: 30px;
 }
 section strong {
 	font-family: 'Source Sans Pro';
