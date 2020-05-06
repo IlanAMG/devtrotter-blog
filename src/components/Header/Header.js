@@ -37,7 +37,7 @@ export const Header = ({ pageTitle }) => {
     }
     `)
     const logo = data.logo.childImageSharp.fixed
-    const searchClient = algoliasearch('OHFSIIX20I', 'eef00803b18bbc0739cadeeaac4bacc7');
+    const searchClient = algoliasearch(process.env.GATSBY_ALGOLIA_APP_ID, procss.env.GATSBY_ALGOLIA_SEARCH_KEY);
     
     const IndexResults = connectStateResults(
         ({ searchState, searchResults, children }) => {
