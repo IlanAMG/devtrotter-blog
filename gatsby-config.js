@@ -1,8 +1,18 @@
 const queries = require("./src/untils/algolia")
 require('dotenv').config()
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://www.devtrotter.com',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
   siteMetadata: {
+    siteUrl: siteUrl,
+    image: '/assets/dev-trotter.png',
     title: `Dev Trotter`,
     author: {
       name: `Dev Trotter`,
@@ -24,7 +34,6 @@ module.exports = {
       }
     },
     description: `Blog commaunautaire dans le domaine du développement Web, Mobile, UI/UX Design et Jeux vidéos.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       ilan: `https://ilanamzallag.com`,
     },
@@ -131,8 +140,30 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
