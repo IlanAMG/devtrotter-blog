@@ -1,6 +1,6 @@
 const DarkTheme = {
 
-    background: '#21201b',
+    background: '#171D2E',
     title: '#dfd1b7',
     paragraphe: '#696355',
     
