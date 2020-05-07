@@ -60,6 +60,25 @@ const StyledLastArticle = styled.article`
         font-size: 1em;
         color: ${({theme}) => theme.title};
     }
+
+    @media screen and (max-width: 850px) {
+        height: auto;
+        padding: 0px;
+
+        .link-last-article {
+            height: auto;
+		    flex-direction: column;
+        }
+        .container-article-right {
+            max-width: 85%;
+        }
+        p {
+            padding: 20px 0 20px 0;
+        }
+        .container-article-right h6 {
+            margin-bottom: 10px !important;
+        }
+	}
 `
 
 export default StyledLastArticle;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { Switch } from 'antd';
 
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectStateResults } from 'react-instantsearch-dom';
@@ -57,48 +56,44 @@ export const Header = ({ pageTitle }) => {
         }
       );
 
-      function onChange(checked) {
-        console.log(`switch to ${checked}`);
-      }
-
     return (
         <StyledHeader>
             <Link to='/' className='wrapper-header left'>
-                <Img style={{marginLeft: '30px', marginRight: '30px'}} fixed={logo} alt='logo' />
+                <Img style={{marginLeft: '30px', marginRight: '30px', width: '40px', height: '40px'}} fixed={logo} alt='logo' />
                 <h1>{pageTitle}</h1>
             </Link>
             <div className='wrapper-header right'>
-                <a href="mailto:devtrotter.info@gmail.com" className='wrapper-social mail'>
+                <a rel="noopener noreferrer" href="mailto:devtrotter.info@gmail.com" className='wrapper-social mail'>
                     <GrMail />
                 </a>
-                <a target="_blank" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' className='wrapper-social youtube'>
+                <a rel="noopener noreferrer" target="_blank" href='https://www.youtube.com/channel/UCHuGcYX0jsbCA0lzFj1DmbA' className='wrapper-social youtube'>
                     <FaYoutube />
                 </a>
                 <svg width="0" height="0">
                     {
                         !instaHover ?
                             <radialGradient id="rg" r="150%" cx="30%" cy="107%">
-                                <stop stop-color="#fdf497" offset="0" />
-                                <stop stop-color="#fdf497" offset="0.05" />
-                                <stop stop-color="#fd5949" offset="0.45" />
-                                <stop stop-color="#d6249f" offset="0.6" />
-                                <stop stop-color="#285AEB" offset="0.9" />
+                                <stop stopColor="#fdf497" offset="0" />
+                                <stop stopColor="#fdf497" offset="0.05" />
+                                <stop stopColor="#fd5949" offset="0.45" />
+                                <stop stopColor="#d6249f" offset="0.6" />
+                                <stop stopColor="#285AEB" offset="0.9" />
                             </radialGradient>
                         : 
                             <radialGradient id="rg" r="150%" cx="30%" cy="107%">
-                                <stop stop-color="#ffffff" offset="0" />
+                                <stop stopColor="#ffffff" offset="0" />
                             </radialGradient>
                     }
                 </svg>
-                <a target="_blank" href='https://www.instagram.com/dev.trotter/?hl=fr' onMouseEnter={() => (setInstaHover(true))} onMouseLeave={() => (setInstaHover(false))} className='wrapper-social insta'>
+                <a rel="noopener noreferrer" target="_blank" href='https://www.instagram.com/dev.trotter/?hl=fr' onMouseEnter={() => (setInstaHover(true))} onMouseLeave={() => (setInstaHover(false))} className='wrapper-social insta'>
                     <FaInstagram className='logo-insta' />
                 </a>
-                <a target="_blank" href=' https://twitter.com/DevTrotter_Pro' className='wrapper-social twitter'>
+                <a rel="noopener noreferrer" target="_blank" href=' https://twitter.com/DevTrotter_Pro' className='wrapper-social twitter'>
                     <FaTwitter />
                 </a>
-                <div className='wrapper-search' onClick={() => setShowInput(!showInput)}>
+                <nav className='wrapper-search' onKeyDown={() => setShowInput(!showInput)} onClick={() => setShowInput(!showInput)}>
                     <IoIosSearch />
-                </div>
+                </nav>
                 {
                     showInput &&
                     <InstantSearch searchClient={searchClient} indexName="Posts">

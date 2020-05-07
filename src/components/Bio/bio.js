@@ -96,6 +96,7 @@ const Bio = ({ sign }) => {
       setPicture(data.profilRemi.childImageSharp.fixed)
       setDesc(data.site.siteMetadata.author.remi.desc)
     }
+                // eslint-disable-next-line
   }, [sign])
 
   return (
@@ -107,7 +108,7 @@ const Bio = ({ sign }) => {
           {social &&
             social.map((item, i) => {
               return (
-                <a target='_blank' href={item.url}>{item.titre}</a>
+                <a rel="noopener noreferrer" target='_blank' href={item.url}>{item.titre}</a>
               )
             })
           }

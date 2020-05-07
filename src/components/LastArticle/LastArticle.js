@@ -10,8 +10,9 @@ export const LastArticle = ({ node, title, author }) => {
             <Link className='link-last-article' to={node.fields.slug}>
                 {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
                     <Img
-                        fixed={node.frontmatter.miniature.childImageSharp.fixed}
+                        fluid={node.frontmatter.miniature.childImageSharp.fluid}
                         alt={title}
+                        style={{width: '75%'}}
                     />
                 : 
                     null
@@ -29,6 +30,7 @@ export const LastArticle = ({ node, title, author }) => {
                                     __html: node.frontmatter.description || node.excerpt,
                                 }}
                             />
+                                                    {/* eslint-disable-next-line */}
                             <small>By <Link to='/apropos'>{author}</Link> | {node.frontmatter.date}</small>
                     </div>
             </Link>

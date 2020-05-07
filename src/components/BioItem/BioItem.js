@@ -41,6 +41,7 @@ export const BioItem = ({ name, picture, desc }) => {
                 }
             ])
         }
+                        // eslint-disable-next-line
     }, [])
 
     return (
@@ -52,7 +53,7 @@ export const BioItem = ({ name, picture, desc }) => {
                     {social &&
                         social.map((item, i) => {
                             return (
-                                <a target='_blank' href={item.url}>{item.titre}</a>
+                                <a key={i} rel="noopener noreferrer" target='_blank' href={item.url}>{item.titre}</a>
                             )
                         })
                     }

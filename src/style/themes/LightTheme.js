@@ -8,7 +8,7 @@ const LightTheme = {
         iconGrey: "#929fa6",
         background: "#eee",
         title: "#000000",
-        subTitle: "rgba(0,0,0,0.6)"
+        subTitle: "rgba(0,0,0,0.6)",
     }
 }
 

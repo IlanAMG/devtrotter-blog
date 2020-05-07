@@ -95,18 +95,25 @@ p, h4, button, label {
 	margin-right: 20px;
 }
 
+@media screen and (max-width: 850px) {
+	.container-index {
+		flex-direction: column;
+		margin-right: 0px;
+	}
+}
+
 .wrapper-container-index-infos-right {
 	width: 300px;
 	min-width: 300px;
-	height: calc(100vh - 65px);
+	height: calc(100vh - 65px)
 }
 
 .container-index-infos-right {
 	width: 300px;
-	height: calc(100vh - 65px);
 	min-width: 300px;
 	position: absolute;
 	padding: 0 10px 0 10px;
+	height: calc(100vh - 65px)
 }
 
 /* //////////////////////////////////////////// */
@@ -336,7 +343,7 @@ blockquote{
   
   @media (min-width:300px) {
     iframe {
-      min-height: calc(80vw * 0.5628205128205128);
+      min-height: calc(80vw * 0.5628205128205128)
 	}
   }
   

@@ -11,7 +11,7 @@ export const ArticleItem = ({ node, title, author }) => {
             {!!node.frontmatter.miniature && !!node.frontmatter.miniature.childImageSharp ?
                 <Img
                     fluid={node.frontmatter.miniature.childImageSharp.fluid}
-                    style={{ height: 225, width: 225, float: 'right' }}
+                    style={{ height: '225px', width: '225px', float: 'right' }}
                     alt={title}
                 />
             : 

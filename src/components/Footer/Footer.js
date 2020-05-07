@@ -41,7 +41,7 @@ export const Footer = () => {
 
     const handleClick = async (id) => {
         setStyleWrapper({
-            height: 'calc(100vh - 65px);',
+            height: 'calc(100vh - 65px)',
         })
 
         setStyleContact({
@@ -77,14 +77,16 @@ export const Footer = () => {
                     {!showForm ?
                         <>
                             <Link to='/apropos'><span>À propos</span></Link>
-                            <span onClick={() => handleClick(1)}>Nous contacter / Travailler avec nous</span>
-                            <span onClick={() => handleClick(2)}>Contribuer au blog</span>
+                            {/* eslint-disable-next-line */}
+                            <span onKeyDown={() => handleClick(1)} onClick={() => handleClick(1)}>Nous contacter / Travailler avec nous</span>
+                            {/* eslint-disable-next-line */}
+                            <span onKeyDown={() => handleClick(2)} onClick={() => handleClick(2)}>Contribuer au blog</span>
                         </>
                         :
                         <div className='container-form'>
-                            <div className='wrapper-close' onClick={handleClose}>
+                            <icon onKeyDown={() => handleClose} className='wrapper-close' onClick={handleClose}>
                                 <IoMdClose />
-                            </div>
+                            </icon>
                             <h3>{titleForm}</h3>
                             <h4>{subTitleForm}<a href='mailto:devtrotter.info@gmail.com'>devtrotter.info@gmail.com</a></h4>
                             <form onSubmit={sendEmail}>

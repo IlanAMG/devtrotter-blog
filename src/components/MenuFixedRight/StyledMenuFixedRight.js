@@ -19,6 +19,7 @@ const StyledMenuFixedRight = styled.section`
     input {
         width: 80%;
         height: 20px;
+        margin-top: 10px;
     }
 
     h2 {
@@ -123,6 +124,11 @@ const StyledMenuFixedRight = styled.section`
     label {
         color: ${({theme}) => theme.title};
         font-size: 0.9em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
     }
     a {
         font-weigth: bold;
@@ -130,6 +136,15 @@ const StyledMenuFixedRight = styled.section`
         text-decoration: none;
         padding: 0 4px 0 4px;
     }
+
+    @media screen and (max-width: 850px) {
+		width: 100%;
+        input {
+            padding: 10px;
+            width: 50%;
+        }
+	}
+}
 `
 
 export default StyledMenuFixedRight;

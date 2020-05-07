@@ -22,34 +22,39 @@ const BlogIndex = ({ data, location }) => {
   const author = data.site.siteMetadata.author.name
 
   const getMarginRightFixedIndex = () => {
-      const widthContainerIndex = ref.current.clientWidth
-      const widthWindow = window.innerWidth
-      const marginRight = (widthWindow - widthContainerIndex) / 2
-  
+    const widthContainerIndex = ref.current.clientWidth
+    const widthWindow = window.innerWidth
+    const marginRight = (widthWindow - widthContainerIndex) / 2
+    if (widthWindow >= 850) {
       setStyleFixedIndex({
         ...styleFixedIndex,
         'marginRight': marginRight
       })
+    }
   }
 
   const fixedIndexOnScroll = () => {
     const distanceTopAndContainerIndex = ref.current.getBoundingClientRect().y
     const distanceBottomAndContainerIndex = ref.current.getBoundingClientRect().bottom
     const containerFixed = window.innerHeight
-    if (distanceBottomAndContainerIndex <= containerFixed) {
-      setStyleFixedIndex({
-        ...styleFixedIndex,
-        'bottom': '0px',
-        'position': 'absolute'
-      })
-    } else if (distanceTopAndContainerIndex <= 60) {
-      setStyleFixedIndex({
-        ...styleFixedIndex,
-        'top': '65px',
-        'position': 'fixed'
-      })
-    } else {
-      setStyleFixedIndex({ ...styleFixedIndex, 'top': '0px' })
+    if (window.innerWidth <= 850) {
+      return setStyleFixedIndex({})
+    } else if (window.innerWidth > 850) {
+      if (distanceBottomAndContainerIndex <= containerFixed && window.innerWidth >= 850) {
+        setStyleFixedIndex({
+          ...styleFixedIndex,
+          'bottom': '0px',
+          'position': 'absolute'
+        })
+      } else if (distanceTopAndContainerIndex <= 60 && window.innerWidth >= 850) {
+        setStyleFixedIndex({
+          ...styleFixedIndex,
+          'top': '65px',
+          'position': 'fixed'
+        })
+      } else {
+        setStyleFixedIndex({ ...styleFixedIndex, 'top': '0px' })
+      }
     }
   }
 
@@ -57,33 +62,38 @@ const BlogIndex = ({ data, location }) => {
     setTimeout(() => {
       window.addEventListener('scroll', fixedIndexOnScroll, { passive: true });
     }, 100)
+                            // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     return () => {
       window.removeEventListener('scroll', fixedIndexOnScroll);
     };
+                            // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     getMarginRightFixedIndex()
     fixedIndexOnScroll()
+                            // eslint-disable-next-line
   }, [sizeWindow])
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Home" /> 
-      
+      <SEO title="Home" />
+
       {posts.map(({ node }, i) => {
         const title = node.frontmatter.title || node.fields.slug
         if (i === 0) {
           // DERNIER ARTICLE
           return (
-            <>
-              <LastArticle key={i} author={author} node={node} title={title} />
+            <React.Fragment key={i}>
+              <LastArticle author={author} node={node} title={title} />
               <div className='divider'></div>
-            </>
+            </React.Fragment>
           )
+        } else {
+          return null
         }
       })}
       <div className='container-index' ref={ref}>
@@ -92,10 +102,10 @@ const BlogIndex = ({ data, location }) => {
             const title = node.frontmatter.title || node.fields.slug
             if (i > 0) {
               return (
-                <ArticleItem author={author} node={node} title={title} key={node.fields.slug} />
+                <ArticleItem author={author} node={node} title={title} key={i} />
               )
             }
-            return
+            return null
           })}
         </ListArticles>
         <MenuFixedRight styleFixedIndex={styleFixedIndex} />
@@ -131,11 +141,8 @@ export const pageQuery = graphql`
             categorie
             miniature {
               childImageSharp {
-                fluid(maxWidth: 225) {
+                fluid(maxHeight: 480) {
                   ...GatsbyImageSharpFluid_withWebp
-                }
-                fixed(height: 480, width: 580) {
-                  ...GatsbyImageSharpFixed_withWebp
                 }
               }
             }

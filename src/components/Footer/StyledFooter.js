@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
 
@@ -117,6 +117,27 @@ const StyledFooter = styled.footer`
         padding: 12px !important;
         font-size: 20px;
     }
+
+    @media screen and (max-width: 850px) {
+        h3, h4 {
+            padding: 5px !important;
+        }
+        h3 {
+            font-size: 2em !important;
+        }
+        .container-form form .container-input {
+            flex-direction: column;
+            margin: 20px 0 20px 0;
+        }
+        .container-form form input {
+            width: 100%;
+            height: 22%;
+        }
+        .wrapper-btn-form {
+            margin-top: 20px;
+        }
+    }
+
     .container-form form textarea {
         width: 100%;
         height: 50%;
