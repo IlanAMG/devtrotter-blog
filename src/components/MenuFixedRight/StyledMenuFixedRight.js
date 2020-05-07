@@ -20,6 +20,7 @@ const StyledMenuFixedRight = styled.section`
         width: 80%;
         height: 20px;
         margin-top: 10px;
+        border: 1px solid grey;
     }
 
     h2 {

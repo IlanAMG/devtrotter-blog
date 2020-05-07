@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from "gatsby"
 import emailjs from 'emailjs-com'
 import { IoMdClose } from 'react-icons/io';
@@ -6,6 +6,7 @@ import { IoMdClose } from 'react-icons/io';
 import StyledFooter from './StyledFooter';
 
 export const Footer = () => {
+    const [smallScreen, setSmallScreen] = useState(false)
     const [titleForm, setTitleForm] = useState('')
     const [subTitleForm, setSubTitleForm] = useState('')
     const [showForm, setShowForm] = useState(false)
@@ -40,16 +41,29 @@ export const Footer = () => {
     }
 
     const handleClick = async (id) => {
-        setStyleWrapper({
-            height: 'calc(100vh - 65px)',
-        })
+        if (smallScreen) {
+            setStyleWrapper({
+                height: '630px',
+            })
 
-        setStyleContact({
-            height: 'calc(100vh - 185px)',
-            position: 'absolute',
-            display: 'flex',
-            flexDirection: 'column'
-        })
+            setStyleContact({
+                height: '630px',
+                position: 'absolute',
+                display: 'flex',
+                flexDirection: 'column'
+            })
+        } else {
+            setStyleWrapper({
+                height: 'calc(100vh - 65px)',
+            })
+
+            setStyleContact({
+                height: 'calc(100vh - 185px)',
+                position: 'absolute',
+                display: 'flex',
+                flexDirection: 'column'
+            })
+        }
 
         if (id === 1) {
             setTitleForm('Nous sommes à votre écoute !')
@@ -70,17 +84,38 @@ export const Footer = () => {
         setShowForm(false)
     }
 
+    useEffect(() => {
+        //RESPONSIVE : dès que la page se charge on vérifie si on est en dessous ou au dessus de 900px pour afficher ou non notre menu
+        const mediaQuery = window.matchMedia('(max-height: 420px)') //matchMedia c'est le media Queries de javascript
+        // addListener c'est comme addEventListener mais pour les media queries en js
+        mediaQuery.addListener(handleMediaQueryChange)
+        handleMediaQueryChange(mediaQuery) // fontion callback qui s'active toute seule
+
+        return () => {
+            mediaQuery.removeListener(handleMediaQueryChange) //avec le return on remet les compteurs à 0 
+        }
+
+    }, [])
+    
+    const handleMediaQueryChange = mediaQuery => {
+        if (mediaQuery.matches) { // .matches vérifie si le query est true ou false 
+            setSmallScreen(true)
+        } else {
+            setSmallScreen(false)
+        }
+    }
+
     return (
         <StyledFooter showForm={false} >
             <div className='wrapper-contact' style={styleWrapper}>
                 <div className='container-footer-contact' style={styleContact}>
                     {!showForm ?
                         <>
-                            <Link to='/apropos'><span>À propos</span></Link>
+                            <Link className='link' to='/apropos'><span>À propos</span></Link>
                             {/* eslint-disable-next-line */}
-                            <span onKeyDown={() => handleClick(1)} onClick={() => handleClick(1)}>Nous contacter / Travailler avec nous</span>
+                            <span className='link' onKeyDown={() => handleClick(1)} onClick={() => handleClick(1)}>Nous contacter / Travailler avec nous</span>
                             {/* eslint-disable-next-line */}
-                            <span onKeyDown={() => handleClick(2)} onClick={() => handleClick(2)}>Contribuer au blog</span>
+                            <span className='link' onKeyDown={() => handleClick(2)} onClick={() => handleClick(2)}>Contribuer au blog</span>
                         </>
                         :
                         <div className='container-form'>

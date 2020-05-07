@@ -20,7 +20,10 @@ const StyledMain = styled.div`
             top: 0;
             position: fixed;
         }
-}
+    
+    @media (max-width:830px) and (max-height:420px){
+        padding-bottom: 0px;
+    }
 `
 
 export default StyledMain;

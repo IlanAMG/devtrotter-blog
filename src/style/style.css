@@ -116,6 +116,21 @@ p, h4, button, label {
 	height: calc(100vh - 65px)
 }
 
+@media (max-width:830px) and (max-height:420px){
+	.wrapper-container-index-infos-right {
+		height: auto;
+		position: relative;
+		min-width: 100%;
+		margin-bottom: 30px;
+	}
+	.container-index-infos-right {
+		height: auto;
+		position: relative;
+		min-width: 100%;
+		margin-bottom: 30px;
+	}
+}
+
 /* //////////////////////////////////////////// */
 /* //////////// TEMPLATE ARTICLE ////////////// */
 /* //////////////////////////////////////////// */

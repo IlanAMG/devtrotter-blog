@@ -6,6 +6,32 @@ const StyledArticleItem = styled.article`
     margin-bottom: 50px;
     padding-left: 10px;
 
+    @media screen and (max-width: 560px) {
+        height: auto;
+        a {
+            height: auto;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center;
+            align-items: center;
+        }
+        .container-article-right {
+            padding: 10px !important;
+            align-items: center !important;
+        }
+        small {
+            text-align: center;
+        }
+        p {
+            padding: 15px;
+            text-align: center;
+        }
+        .title-lastarticle {
+            text-align: center !important;
+            padding: 10px !important;
+        }
+    }
+
     .container-article-right {
         display: flex;
         flex-direction: column;

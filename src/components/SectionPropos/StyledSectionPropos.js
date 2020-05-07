@@ -21,6 +21,16 @@ const StyledSectionPropos = styled.section`
         line-height: 26px;
         font-size: 1.1em;
     }
+    @media screen and (max-width: 570px) {
+        p {
+            font-size: 0.9em !important;
+        }
+    }
+    @media (max-width:830px) and (max-height:420px){
+        p {
+            margin-bottom: 50px !important;
+        }
+}
 `
 
 export default StyledSectionPropos;

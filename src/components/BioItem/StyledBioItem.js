@@ -24,6 +24,18 @@ const StyledBioItem = styled.div`
         font-size: 1.1em;
     }
 
+    @media screen and (max-width: 570px) {
+
+        padding: 20px 5px 20px 5px !important;
+            p {
+                font-size: 0.9em !important;
+                line-height: 20px !important;
+            }
+            h3 {
+                margin-top: 20px !important;
+            }
+    }
+
     .container-social {
         display: flex;
         
