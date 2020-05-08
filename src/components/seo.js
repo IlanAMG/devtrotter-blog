@@ -38,7 +38,7 @@ const SEO = ({ description, lang, meta, title, siteUrl , image}) => {
         },
         {
           property: `og:title`,
-          content: 'Dev Trotter - Blog',
+          content: `${site.siteMetadata.title} | ${title}`,
         },
         {
           property: `og:description`,
@@ -46,7 +46,7 @@ const SEO = ({ description, lang, meta, title, siteUrl , image}) => {
         },
         {
           property: `og:url`,
-          content: siteUrl,
+          content: site.siteMetadata.siteUrl,
         },
         {
           property: `og:type`,
@@ -54,11 +54,11 @@ const SEO = ({ description, lang, meta, title, siteUrl , image}) => {
         },
         {
           property: `og:image`,
-          content: image,
+          content: site.siteMetadata.social.image,
         },
         {
           property: `twitter:image`,
-          content: image,
+          content: site.siteMetadata.social.image,
         },
         {
           name: `twitter:card`,
@@ -70,7 +70,7 @@ const SEO = ({ description, lang, meta, title, siteUrl , image}) => {
         },
         {
           name: `twitter:title`,
-          content: 'Dev Trotter - Blog',
+          content: `${site.siteMetadata.title} | ${title}`,
         },
         {
           name: `twitter:description`,
