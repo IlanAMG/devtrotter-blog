@@ -54,11 +54,11 @@ const SEO = ({ description, lang, meta, title, siteUrl , image}) => {
         },
         {
           property: `og:image`,
-          content: site.siteMetadata.social.image,
+          content: '/logo.png',
         },
         {
           property: `twitter:image`,
-          content: site.siteMetadata.social.image,
+          content: '/logo.png',
         },
         {
           name: `twitter:card`,
