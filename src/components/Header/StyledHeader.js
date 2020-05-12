@@ -286,6 +286,10 @@ const StyledHeader = styled.header`
     .ais-Hits-item {
         margin-bottom: 10px;
     }
+    .ais-Hits-item:hover {
+        background-color: rgba(0,0,0,0.05) !important;
+        transition: 300ms !important;
+    }
     
     .noResults {
         position: fixed;
