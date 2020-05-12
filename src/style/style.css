@@ -418,6 +418,56 @@ blockquote{
 }
 
 
+/* //////////////////////////////////////////// */
+/* //////////// POST PREVIEW ////////////// (le css est écrit ici car n'est pas pris en compte dans styled-component) */
+/* //////////////////////////////////////////// */
+
+.post-preview {
+	padding-bottom: 10px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.11) !important;
+    transition: 300ms !important;
+}
+
+.post-preview:hover {
+	background-color: rgba(0,0,0,0.05);
+	transition: 300ms !important;
+}
+
+.post-preview .container-top {
+	display: flex;
+	justify-content: space-between !important;
+}
+
+.post-preview h2 {
+	font-size: 1.1em !important;
+	color: #2D2D2D !important;
+}
+
+.post-preview h6 {
+	display: flex !important;
+	padding: 5px !important;
+	background-color: #0079c6 !important;
+	color: white !important;
+	font-size: 0.7em !important;
+}
+.post-preview a {
+	text-decoration: none !important;
+}
+
+.post-preview p {
+	font-size: 0.8em !important;
+	color: grey !important;
+	font-style: italic !important;
+	padding: 5px 0 5px 0 !important;
+	line-height: 1em !important;
+}
+.post-preview small {
+	font-size: 0.7em !important;
+	color: #2D2D2D !important;
+}
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');

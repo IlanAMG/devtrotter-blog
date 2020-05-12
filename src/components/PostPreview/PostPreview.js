@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby';
 
-import StyledPostPreview from './StyledPostPreview'
+// import StyledPostPreview from './StyledPostPreview'
 
 export const PostPreview = ({ hit }) => {
 
     return (
-        <Link to={ hit.fields.slug }>
-            <StyledPostPreview>
+        <Link className='post-preview' to={ hit.fields.slug }>
                 <div className='container-top'>
                     <h2 className='title-lastarticle'>
                         {hit.title}
@@ -22,7 +21,6 @@ export const PostPreview = ({ hit }) => {
                         }}
                     />
                     <small>{hit.date}</small>
-            </StyledPostPreview>
         </Link >
     )
 }
