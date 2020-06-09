@@ -15,6 +15,7 @@ collections:
       - { name: slug, label: Slug }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - { name: description, label: Description }
       - { name: categorie, label: Catégorie, widget: 'select', options: ['WEB', 'DESIGN', 'MOBILE', 'JEUX VIDEOS'], default: ["WEB"] }
       - { name: miniature, label: Miniature, widget: "image", default: /assets/salty_egg.jpg }
       - { name: body, label: Body, widget: markdown }
