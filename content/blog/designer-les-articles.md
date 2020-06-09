@@ -1,73 +1,57 @@
 ---
-slug: design-article
-date: 2020-05-04T15:08:54.466Z
-title: Designer les Articles
-categorie: DESIGN
-miniature: /assets/salty_egg.jpg
+slug: Minute-Geek-Article
+date: 2020-06-09T15:08:54.466Z
+title: "La Minute Geek : Bootstrap."
+categorie: WEB
+miniature: /assets/bootstrap.png
 ---
+Bonjour et bienvenue jeunes lecteurs !!!!\
+\
+Comme vous le savez cette rubrique a pour but de vous faire découvrir de manière complète le thème et de pouvoir vous faire votre propre avis dessus. Aujourd’hui on se retrouve pour parler de Bootstrap et voici les sujets que nous allons aborder : Bootstrap c’est quoi ? Comment fonctionne-t-il , ses limites et un avis personnel de ma part à prendre ou à laisser. Bien entendu à vous de décider de votre avenir.
 
-# Ceci est un titre h1
 
-## Ceci est un titre h2
 
-### Ceci est un titre h3
+## 1- Quesque Bootstrap ?
 
-https://codepen.io/Coderesting/pen/yLyaJMz
 
-#### Ceci est un titre h4
 
-##### Ceci est un titre h5
+Bootstrap et tout simplement ce qu’on appelle un Framework venant du Css. Il permet également de vous simplifier la vie en responsive et javascript. Alors je vous vois venir bande de curieux !!! Un Framework pour ceux qui ne savent pas est tout simplement un langage que l’on a modifié, organisé, facilité dans le but de coder plus rapidement et donc parvenir à gagner un temp précieux. Bootstrap en fait partie ; il fait plus exactement partie des Framework Css (Langage pour styliser les site web) ce Framework a été crée par twitter dans le but de faciliter le travail des développeurs.
 
-###### Ceci est un titre h6
 
-Intégration Insta :
 
-https://www.instagram.com/p/B_kScZGDX34/
+## 2- Comment marche-t-il ?
 
-**Une petite citation :**
-
-> Ceci est une citation
->
-> Voilà voilà
-
-*Un peu de texte :* 
-
-JQSDNFLSKQFBLSHQFBslqbfsqjlfblsqdfbsdlqkfjbsdqfkbsdqofkjsqbdlfhsdbqfljhsdqbfljshqbfjsq.
-
-qlhsdbflsqhbflsqhjdfblsqjhfblqsbfh.
-
-qsdjfpjknsqdfkjsqblfjkbsqlfkbsdqlfhsqbdlhqsdhjfbsqhdfbfiunnhelcuHRLIUfgdqshfnqshbflhsqfblkjNAmkjndqkjfbsdkjfsdknf sqlf sqkfbskjfdnsdmkjfnsqkjfnsqlkjgbqflkgjqbskj s qlkbsmkjqenmkfjnmkjdfnqsjkc sqmkjc 
-
-![react](/assets/miniature.png "react")
-
-qdslkhfbqhesbfqezfb<kjsfblsdhfblqsjhfbelzhebflh flhje fhjezq flqhj jlhdf lqjfhejlhfblzhBFLEIFBQKLEFBLSQEFBSQLEHFBHJSBF.
-
-<https://www.youtube.com/watch?v=tSyXb0sHBoE&t=13s>
-
-`const code = 'ceci est du code'`
-
-https://twitter.com/contentful/status/1253040128840392704
-
-Lien vers le [portfolio](https://www.ilanamzallag.com)
-
-### Une petite liste :
-
-1. 1
-2. blbla
-3. blblabla
-
-   * 1
-
-     * 2
+Comme on l’a dit plus haut un Framework et sensé simplifier la vie de son usager mais comment ? Etand un framework de Css pour appeler une fonction dans votre code Html vous mettez un petit identifiant derrière nommer ‘’class=’’ comme le code si dessous.
 
 ```
-if (location.pathname === rootPath) {
-    title = 'Dev Trotter - Blog'
-  } else if (location.pathname === '/apropos') {
-    title = 'Dev Trotter - À propos'
-  }
+<div class="custom-control custom-checkbox d-flex justify-content-center mr-sm-2">
 ```
 
-Bye bye
+C’est simple !!!! au lieu d’écrire à chaque fois vos classes, twitter les as déjà préconfigurées vous n’avez plus qu’à apprendre les différentes classes bootstrap pour coder plus simplement comme un petit exemple visuel est toujours plus concret que de belles paroles voici un exemple de ce que peut donner une class bootstrap
+
+```
+<div class="navBootDisplay">
+      <nav class="navbar navbar-expand-lg navbar-dark colorDarkBlue colorBorder sticky-top">
+        <a class="navbar-brand" href="#"> <img class="imgSizeLogo" src="../image/logo1.png" alt="logo1"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+```
+
+plus besoin de feuille de style c’est magique non ?
+
+## 3- Ses limites et retour d’expérience.
+
+Maintenant que vous connaissez Bootstrap vous pensez que c’est simple et pourquoi ne l’a- t-on pas appris directement…. Mais attention !!! Vous allez voir que malgré ses caractéristiques avantageuses, il vous reste quand même à faire des manipulations qui peuvent s’avérer fastidieuses. Tout d’abord vous allez vite vous sentir limité au niveau des couleurs, car oui twitter propose un panel de couleurs de base… Alors pas de panique !! vous pouvez modifier les variables de Bootstrap avec du Sass/ SCSS un langage déviant de Css, mais cela s’avère compliquer et d’expérience j’ai préféré modifier directement les classe Css quand cela était nécessaire. 
+
+
+
+**Petit récap de fin :** Bootstrap est un framework Css qui vise à nous faire gagner du temp. Il s’utilise grâce au classe Css en important un petit script dans votre en tête. Bootstrap et à la portée de tous. Le minimum requis et d’avoir des connaissances en Css. 
+
+Et voilà malheureusement c’est déjà la fin de ce premier article j’espère vous retrouver rapidement pour un nouvel article. Si vous trouvez qu’il manque certains détails à vos yeux n’hésitez pas à me les soumettre en commentaire ou en message dans la rubrique contact Merci de votre visite et à très vite pour de nouveaux articles !!!!
+
+
+
+L’équipe des dev’trotter.
 
 <bio sign='Seb'></bio>
