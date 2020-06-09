@@ -100,7 +100,7 @@ const Bio = ({ sign }) => {
   }, [sign])
 
   return (
-    <StyledBio>
+    <div className='bio'>
       <div className='container-desc-bio'>
         <h3>{name}</h3>
         <p>{desc}</p>
@@ -123,7 +123,7 @@ const Bio = ({ sign }) => {
         fixed={picture}
         alt='profil'
       />
-    </StyledBio>
+    </div>
   )
 }
 
