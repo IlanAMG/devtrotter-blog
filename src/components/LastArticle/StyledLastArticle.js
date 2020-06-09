@@ -13,7 +13,7 @@ const StyledLastArticle = styled.article`
         height: 480px;
         display: flex;
         align-items: center;
-        justify-content: space-between; 
+        justify-content: space-around; 
     }
 
     .container-article-right {
@@ -26,6 +26,7 @@ const StyledLastArticle = styled.article`
         height: 80%;
         width: auto;
         flex-wrap: wrap;
+        min-width: 320px;
     }
 
     .container-article-right h6 {

@@ -12,7 +12,7 @@ export const LastArticle = ({ node, title, author }) => {
                     <Img
                         fluid={node.frontmatter.miniature.childImageSharp.fluid}
                         alt={title}
-                        style={{width: '75%'}}
+                        style={{minWidth: '480px', maxWidth: '600px'}}
                     />
                 : 
                     null
