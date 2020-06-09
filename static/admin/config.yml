@@ -4,7 +4,7 @@ backend:
 
 media_folder: content/assets
 public_folder: /assets
-site_url: https://www.blog.devtrotter.com/
+site_url: http://sad-austin-264f84.netlify.app/
 
 collections:
   - name: blog
