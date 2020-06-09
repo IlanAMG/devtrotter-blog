@@ -2,6 +2,7 @@
 slug: Minute-Geek-Article
 date: 2020-06-09T15:08:54.466Z
 title: "La Minute Geek : Bootstrap."
+description: ''
 categorie: WEB
 miniature: /assets/bootstrap.png
 ---
